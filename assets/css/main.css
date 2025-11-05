@@ -1,106 +1,88 @@
 @charset "UTF-8";
 :root {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-tertiary: #e9ecef;
-  --bg-inverse: #212529;
-  --text-primary: #212529;
-  --text-secondary: #6c757d;
-  --text-muted: #adb5bd;
+  --bg-primary: #f9fcfb;
+  --bg-secondary: #eaf7f4;
+  --bg-tertiary: #dbeff0;
+  --bg-inverse: #1f3833;
+  --text-primary: #1f3833;
+  --text-secondary: #527a73;
+  --text-muted: #8aa7a0;
   --text-inverse: #ffffff;
   --text-on-accent: #ffffff;
-  --accent-primary: #3cc88f;
-  --accent-secondary: #335b9a;
-  --accent-success: #28a97b;
-  --accent-danger: #e36565;
-  --accent-warning: #f5c56b;
-  --accent-info: #57c4dc;
-  --border-color: #dee2e6;
-  --border-light: #e9ecef;
-  --border-dark: #ced4da;
-  --focus-ring: 0 0 0 3px rgba(60, 200, 143, 0.25);
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --font-family-base: "Segoe UI", system-ui, -apple-system, sans-serif;
-  --font-family-heading: "Segoe UI", system-ui, -apple-system, sans-serif;
+  --accent-primary: #69c9b9;
+  --accent-secondary: #8ab6d6;
+  --accent-success: #57bfa0;
+  --accent-danger: #e57474;
+  --accent-warning: #f3c97b;
+  --accent-info: #a5d8e0;
+  --border-color: #d6ebe6;
+  --border-light: #e3f2ef;
+  --border-dark: #aaccc3;
+  --focus-ring: 0 0 0 3px rgba(105, 201, 185, 0.4);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --font-family-base: "Merriweather", "Georgia", serif;
+  --font-family-heading: "Lato", sans-serif;
   --font-size-base: 1rem;
-  --line-height-base: 1.6;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-bold: 700;
+  --line-height-base: 1.7;
   --card-bg: #ffffff;
-  --button-bg: #3cc88f;
+  --button-bg: var(--accent-primary);
   --button-text: #ffffff;
-  --button-hover-bg: #2fa778;
+  --button-hover-bg: #57bfa0;
   --input-bg: #ffffff;
-  --input-border: #dee2e6;
+  --input-border: var(--border-color);
   --transition-base: all 0.3s ease;
   --transition-fast: all 0.15s ease;
-  --particles-opacity: 0.6;
-  --particles-count: 80;
-}
-
-.dyslexia-friendly {
-  --font-family-base: "OpenDyslexic", "Comic Sans MS", sans-serif;
-  --font-size-base: 1.1rem;
-  --line-height-base: 1.8;
-  letter-spacing: 0.05em;
-}
-
-.reading-optimized {
-  --font-family-base: "Merriweather", "Georgia", serif;
-  --font-size-base: 1.15rem;
-  --line-height-base: 1.8;
-  max-width: 65ch;
-  margin: 0 auto;
+  --particles-opacity: 0.5;
+  --particles-count: 60;
 }
 
 [data-theme=light] {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --text-primary: #212529;
-  --text-secondary: #6c757d;
-  --accent-color: #3cc88f;
-  --border-color: #dee2e6;
+  --bg-primary: #f9fcfb;
+  --bg-secondary: #eaf7f4;
+  --text-primary: #1f3833;
+  --text-secondary: #527a73;
+  --accent-color: #69c9b9;
+  --border-color: #d6ebe6;
   --navbar-bg: #ffffff;
   --card-bg: #ffffff;
-  --button-bg: #3cc88f;
-  --focus-ring: 0 0 0 3px rgba(60, 200, 143, 0.25);
+  --button-bg: #69c9b9;
+  --button-hover-bg: #57bfa0;
+  --focus-ring: 0 0 0 3px rgba(105, 201, 185, 0.35);
 }
 
 [data-theme=dark] {
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #2d2d2d;
-  --bg-tertiary: #404040;
-  --bg-inverse: #ffffff;
-  --text-primary: #ffffff;
-  --text-secondary: #b0b0b0;
-  --text-muted: #8a8d91;
-  --text-inverse: #1a1a1a;
+  --bg-primary: #101f1c;
+  --bg-secondary: #1b2f2b;
+  --bg-tertiary: #233d38;
+  --bg-inverse: #f9fcfb;
+  --text-primary: #eaf7f4;
+  --text-secondary: #a7ccc3;
+  --text-muted: #7da39a;
+  --text-inverse: #101f1c;
   --text-on-accent: #ffffff;
-  --accent-primary: #3cc88f;
-  --accent-secondary: #4a7bc9;
-  --accent-success: #28a97b;
-  --accent-danger: #e36565;
-  --accent-warning: #f5c56b;
-  --accent-info: #57c4dc;
-  --border-color: #404040;
-  --border-light: #4d4d4d;
-  --border-dark: #333333;
-  --focus-ring: 0 0 0 3px rgba(60, 200, 143, 0.5);
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
-  --navbar-bg: #1a1a1a;
-  --card-bg: #2d2d2d;
-  --button-bg: #3cc88f;
-  --button-text: #ffffff;
-  --button-hover-bg: #2fa778;
-  --input-bg: #2d2d2d;
-  --input-border: #404040;
-  --focus-ring: 0 0 0 3px rgba(60, 200, 143, 0.5);
+  --accent-primary: #57bfa0;
+  --accent-secondary: #7fb3d5;
+  --accent-success: #45a588;
+  --accent-danger: #e07a7a;
+  --accent-warning: #e6c065;
+  --accent-info: #90c9d5;
+  --border-color: #2e4a45;
+  --border-light: #385b55;
+  --border-dark: #1b2f2b;
+  --focus-ring: 0 0 0 3px rgba(87, 191, 160, 0.45);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+  --navbar-bg: #101f1c;
+  --card-bg: #1b2f2b;
+  --button-bg: var(--accent-primary);
+  --button-hover-bg: #4aa88d;
+  --input-bg: #233d38;
+  --input-border: #2e4a45;
   --particles-opacity: 0.4;
+  --particles-count: 50;
   --image-opacity: 0.9;
 }
 
@@ -2745,6 +2727,54 @@ body {
 }
 .footer .social-links a:hover {
   color: rgba(var(--accent-primary, #3cc88f), 0.8);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.blog-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: var(--transition-base);
+}
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.blog-card .blog-image {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.blog-card .blog-content {
+  padding: 1.5rem;
+}
+.blog-card .blog-content h2 {
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+.blog-card .blog-content p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+.blog-card .blog-content .btn-accent {
+  background: var(--accent-primary);
+  color: var(--text-on-accent);
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+.blog-card .blog-content .btn-accent:hover {
+  background: var(--accent-secondary);
 }
 
 @media (max-width: 768px) {
