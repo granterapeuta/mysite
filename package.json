@@ -1,0 +1,43 @@
+{
+  "name": "gran-terapeuta",
+  "version": "1.0.0",
+  "description": "Página personal para tu mejora integral",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "gulp watch",
+    "build": "gulp styles",
+    "build:prod": "cross-env NODE_ENV=production gulp styles",
+    "deploy": "npm run build:prod",
+    "test": "echo \"No tests specified\" && exit 0",
+    "clean": "gulp clean",
+    "start": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/granterapeuta/mysite.git"
+  },
+  "keywords": [
+  ],
+  "author": "ChispiDEV + GR-Terapia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.co/granterapeuta/mysite/issues"
+  },
+  "homepage": "https://github.com/granterapeuta/mysite#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "cross-env": "^7.0.3",
+    "cssnano": "^6.0.1",
+    "gulp": "^5.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-sourcemaps": "^2.6.5",
+    "sass": "^1.93.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}

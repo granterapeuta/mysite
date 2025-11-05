@@ -1,0 +1,201 @@
+@use '../abstracts/variables' as v;
+
+// Contenedor de perfil hero
+.hero-profile {
+  display: flex;
+  align-items: center;
+  gap: v.$spacing-8;
+  flex-direction: column;
+
+  @media (min-width: v.$breakpoint-lg) {
+    flex-direction: row;
+    gap: v.$spacing-10;
+  }
+}
+
+// Contenedor de imagen de perfil circular
+.profile-image-container {
+  flex-shrink: 0;
+  position: relative;
+
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-primary);
+    box-shadow: var(--shadow-lg);
+    transition: all v.$transition-normal;
+
+    @media (min-width: v.$breakpoint-md) {
+      width: 250px;
+      height: 250px;
+    }
+
+    @media (min-width: v.$breakpoint-lg) {
+      width: 300px;
+      height: 300px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      border-color: var(--accent-secondary);
+      box-shadow: var(--shadow-xl);
+    }
+  }
+
+  // Efecto de anillo decorativo
+  &::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-primary);
+    opacity: 0.3;
+    animation: pulse-ring 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.3;
+    }
+  }
+}
+
+// Contenido hero al lado de la foto
+.hero-content {
+  flex: 1;
+  text-align: center;
+
+  @media (min-width: v.$breakpoint-lg) {
+    text-align: left;
+  }
+}
+
+// Selección de idiomas en landing
+.language-selection {
+  margin-top: v.$spacing-8;
+}
+
+.language-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: v.$spacing-6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.language-card {
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: v.$border-radius-lg;
+  padding: v.$spacing-6;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all v.$transition-normal;
+  text-align: center;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-primary);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .language-flag-container {
+    margin-bottom: v.$spacing-4;
+  }
+
+  .language-flag-large {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--border-color);
+    transition: border-color v.$transition-normal;
+  }
+
+  &:hover .language-flag-large {
+    border-color: var(--accent-primary);
+  }
+
+  h3 {
+    margin-bottom: v.$spacing-2;
+    color: var(--text-primary);
+  }
+
+  p {
+    color: var(--text-secondary);
+    margin: 0;
+  }
+}
+
+// Características en landing
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: v.$spacing-6;
+  margin-top: v.$spacing-8;
+}
+
+.feature-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: v.$border-radius-lg;
+  padding: v.$spacing-6;
+  text-align: center;
+  transition: all v.$transition-normal;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: v.$spacing-4;
+  }
+
+  h3 {
+    margin-bottom: v.$spacing-3;
+    color: var(--text-primary);
+  }
+
+  p {
+    color: var(--text-secondary);
+    margin: 0;
+  }
+}
+
+// Etiquetas de habilidades
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: v.$spacing-3;
+  margin-top: v.$spacing-4;
+}
+
+.skill-tag {
+  background: var(--accent-primary);
+  color: var(--text-on-accent);
+  padding: v.$spacing-2 v.$spacing-4;
+  border-radius: v.$border-radius-xl;
+  font-size: v.$font-size-sm;
+  font-weight: v.$font-weight-medium;
+  transition: all v.$transition-fast;
+
+  &:hover {
+    background: var(--accent-secondary);
+    transform: translateY(-1px);
+  }
+}

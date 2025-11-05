@@ -1,0 +1,336 @@
+@use '../abstracts/variables' as v;
+
+// Estilos base para dropdowns
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  .dropdown-toggle {
+    transition: all v.$transition-base;
+    background: transparent;
+    border: 1px solid transparent;
+    color: inherit;
+    cursor: pointer;
+    padding: v.$spacing-2 v.$spacing-3;
+    display: flex;
+    align-items: center;
+    gap: v.$spacing-2;
+    border-radius: v.$border-radius;
+
+    &:hover {
+      background: rgba(v.$color-primary, 0.1);
+      border-color: rgba(v.$color-primary, 0.2);
+    }
+
+    .dropdown-arrow {
+      font-size: 0.7em;
+      transition: transform v.$transition-base;
+    }
+
+    &[aria-expanded="true"] .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: v.$white;
+    border: 1px solid v.$gray-300;
+    border-radius: v.$border-radius;
+    box-shadow: v.$shadow-lg;
+    min-width: 180px;
+    z-index: v.$z-index-dropdown;
+    display: none;
+    padding: v.$spacing-2 0;
+
+    &.show {
+      display: block;
+    }
+
+    .dropdown-item {
+      transition: all v.$transition-fast;
+      display: block;
+      width: 100%;
+      padding: v.$spacing-3 v.$spacing-4;
+      border: none;
+      background: none;
+      text-align: left;
+      cursor: pointer;
+      color: v.$gray-800;
+
+      &:hover {
+        background: v.$gray-100;
+        color: v.$color-primary;
+      }
+
+      &.active {
+        background: v.$color-primary;
+        color: v.$white;
+      }
+    }
+  }
+}
+
+// Menú de temas específico
+.theme-menu {
+  .theme-option {
+    display: flex;
+    align-items: center;
+    gap: v.$spacing-3;
+    padding: v.$spacing-3 v.$spacing-4;
+    position: relative;
+    transition: all v.$transition-base;
+
+    // Cada opción mantiene su tema independiente
+    &[data-theme="light"] {
+      background: #ffffff;
+      color: #212529;
+
+      .theme-preview {
+        background: linear-gradient(135deg, #ffffff 0%, #e9ecef 100%);
+        border-color: #dee2e6;
+      }
+
+      &:hover {
+        background: #f8f9fa;
+      }
+
+      &.active {
+        border: 2px solid #3cc88f;
+        margin: -2px;
+      }
+    }
+
+    &[data-theme="dark"] {
+      background: #1a1a1a;
+      color: #ffffff;
+
+      .theme-preview {
+        background: linear-gradient(135deg, #1a1a1a 0%, #343a40 100%);
+        border-color: #495057;
+      }
+
+      &:hover {
+        background: #2d2d2d;
+      }
+
+      &.active {
+        border: 2px solid #4a6572;
+        margin: -2px;
+      }
+    }
+
+    &[data-theme="sepia"] {
+      background: #f4ecd8;
+      color: #5b4636;
+
+      .theme-preview {
+        background: linear-gradient(135deg, #f4ecd8 0%, #e6d7b8 100%);
+        border-color: #d4b996;
+      }
+
+      &:hover {
+        background: #e8ddc8;
+      }
+
+      &.active {
+        border: 2px solid #a86c3d;
+        margin: -2px;
+      }
+    }
+
+    &[data-theme="gray-scale"] {
+      background: #2d3748;
+      color: #e2e8f0;
+
+      .theme-preview {
+        background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+        border-color: #718096;
+      }
+
+      &:hover {
+        background: #4a5568;
+      }
+
+      &.active {
+        border: 2px solid #e2e8f0;
+        margin: -2px;
+      }
+    }
+
+    &[data-theme="high-contrast"] {
+      background: #000000;
+      color: #ffffff;
+
+      .theme-preview {
+        background: linear-gradient(135deg, #000000 0%, #ffffff 100%);
+        border-color: #ffffff;
+      }
+
+      &:hover {
+        background: #1a1a1a;
+      }
+
+      &.active {
+        border: 2px solid #ffff00;
+        margin: -2px;
+      }
+    }
+
+    .theme-preview {
+      width: 24px;
+      height: 24px;
+      border-radius: v.$border-radius;
+      border: 2px solid;
+      transition: all v.$transition-base;
+      flex-shrink: 0;
+    }
+  }
+}
+
+// Menú de accesibilidad específico
+.accessibility-menu {
+  min-width: 280px;
+  max-width: 320px;
+
+  .accessibility-option {
+    padding: v.$spacing-3 v.$spacing-4;
+    border-bottom: 1px solid v.$gray-200;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .option-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: v.$spacing-2;
+
+      .option-title {
+        font-weight: v.$font-weight-medium;
+        color: v.$gray-800;
+      }
+    }
+
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .toggle-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: v.$gray-300;
+        border-radius: 24px;
+        transition: background v.$transition-base;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 2px;
+          left: 2px;
+          width: 20px;
+          height: 20px;
+          background: v.$white;
+          border-radius: 50%;
+          transition: transform v.$transition-base;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+      }
+
+      input:checked + .toggle-slider {
+        background: v.$color-primary;
+
+        &::before {
+          transform: translateX(20px);
+        }
+      }
+    }
+
+    .intensity-control {
+      display: flex;
+      align-items: center;
+      gap: v.$spacing-3;
+      margin-top: v.$spacing-2;
+
+      .intensity-label {
+        font-size: v.$font-size-sm;
+        color: v.$gray-600;
+        min-width: 70px;
+      }
+
+      .intensity-slider {
+        flex: 1;
+        height: 6px;
+        background: v.$gray-300;
+        border-radius: 3px;
+        outline: none;
+        cursor: pointer;
+
+        &::-webkit-slider-thumb {
+          appearance: none;
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background: v.$color-primary;
+          cursor: pointer;
+          border: 2px solid v.$white;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        &::-moz-range-thumb {
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background: v.$color-primary;
+          cursor: pointer;
+          border: 2px solid v.$white;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+      }
+
+      .intensity-value {
+        font-size: v.$font-size-sm;
+        color: v.$gray-600;
+        min-width: 20px;
+        text-align: center;
+        font-weight: v.$font-weight-bold;
+        background: v.$gray-100;
+        padding: v.$spacing-1 v.$spacing-2;
+        border-radius: v.$border-radius-sm;
+      }
+    }
+    
+    // Control de intensidad de movimiento específico
+    &.motion-intensity {
+      .intensity-labels {
+        display: flex;
+        justify-content: space-between;
+        margin-top: v.$spacing-1;
+
+        .intensity-label {
+          font-size: v.$font-size-xs;
+          color: v.$gray-500;
+
+          &.min { text-align: left; }
+          &.max { text-align: right; }
+        }
+      }
+    }
+  }
+}
+

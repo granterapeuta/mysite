@@ -1,0 +1,86 @@
+// src/scss/themes/accessibility/_gray-scale-theme.scss
+[data-theme="gray-scale"] {
+  // Aplicar filtro de escala de grises
+  filter: grayscale(100%) contrast(1.1) brightness(0.9);
+
+  // Mejorar contraste en escala de grises
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-tertiary: #404040;
+  --bg-inverse: #ffffff;
+
+  // Texto claro sobre fondo oscuro
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --text-muted: #808080;
+  --text-inverse: #000000;
+  --text-on-accent: #ffffff;
+
+  // Acentos en escala de grises
+  --accent-primary: #666666;
+  --accent-secondary: #888888;
+  --accent-success: #555555;
+  --accent-danger: #444444;
+  --accent-warning: #777777;
+  --accent-info: #666666;
+
+  // Bordes
+  --border-color: #404040;
+  --border-light: #4d4d4d;
+  --border-dark: #333333;
+
+  // Efectos
+  --focus-ring: 0 0 0 3px rgba(102, 102, 102, 0.5);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+
+  // Componentes
+  --card-bg: #2d2d2d;
+  --button-bg: #666666;
+  --button-text: #ffffff;
+  --button-hover-bg: #555555;
+  --input-bg: #2d2d2d;
+  --input-border: #404040;
+
+  // Mejorar legibilidad
+  h1, h2, h3, h4, h5, h6 {
+    color: #f0f0f0;
+    font-weight: 600;
+  }
+  
+  // Botones más contrastados
+  .btn {
+    background: var(--button-bg);
+    color: var(--button-text);
+    border: 1px solid var(--border-color);
+
+    &:hover {
+      background: var(--button-hover-bg);
+      filter: brightness(1.1);
+    }
+  }
+
+  // Tarjetas con mejor contraste
+  .skill-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+
+    &:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+  }
+
+  // Navegación
+  .navbar {
+    background: var(--bg-primary);
+    border-bottom-color: var(--border-color);
+  }
+
+  // Asegurar que las imágenes mantengan algo de contraste
+  img, video, canvas {
+    filter: grayscale(100%) contrast(1.2) brightness(0.95);
+  }
+}

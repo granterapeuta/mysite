@@ -1,0 +1,48 @@
+// src/scss/themes/particles/_base-particles.scss
+// ===== CONFIGURACIÓN BASE Y DEFAULTS =====
+
+:root {
+  // ===== COMPORTAMIENTO BASE =====
+  --particles-opacity: 0.6;
+  --particles-size-min: 1;
+  --particles-size-max: 2.5;
+  --particles-speed: 0.6;
+  --particles-count: 80;
+  --particles-blur: 0;
+  --particles-line-linked: false;
+  --particles-move-speed: 1;
+  --particles-density: 100;
+
+  // ===== COLORES BASE (TEMA CLARO) =====
+  --particles-color-1: rgba(60, 200, 143, 0.15);
+  --particles-color-2: rgba(51, 91, 154, 0.12);
+  --particles-color-3: rgba(87, 196, 220, 0.1);
+  --particles-color-4: rgba(40, 169, 123, 0.12);
+  --particles-color-5: rgba(255, 255, 255, 0.08);
+  --particles-color-6: rgba(200, 220, 255, 0.1);
+
+  // ===== ARRAY PARA JAVASCRIPT - CORREGIDO =====
+  --particles-colors-array: "[rgba(60, 200, 143, 0.15), rgba(51, 91, 154, 0.12), rgba(87, 196, 220, 0.1), rgba(40, 169, 123, 0.12), rgba(255, 255, 255, 0.08), rgba(200, 220, 255, 0.1)]";
+
+  // ===== CLASES UTILITARIAS =====
+  --particles-interaction-opacity: 0.4;
+  --particles-mobile-opacity: 0.8;
+}
+
+// ===== CLASES DE ESTADO =====
+.particles-disabled {
+  --particles-opacity: 0;
+  --particles-count: 0;
+}
+
+.particles-minimal {
+  --particles-opacity: 0.3;
+  --particles-count: 40;
+  --particles-speed: 0.4;
+}
+
+.particles-performance {
+  --particles-count: 30;
+  --particles-speed: 0.3;
+  --particles-move-speed: 0.5;
+}

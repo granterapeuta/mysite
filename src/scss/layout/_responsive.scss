@@ -1,0 +1,84 @@
+// src/scss/layout/_responsive.scss
+@use '../abstracts/variables' as v;
+
+// ===== RESPONSIVE =====
+@media (max-width: v.$breakpoint-md) {
+  .nav-menu {
+    gap: v.$spacing-4;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+}
+
+@media (max-width: v.$breakpoint-sm) {
+  .nav-container {
+    flex-direction: column;
+    gap: v.$spacing-3;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 100px 0 60px;
+  }
+}
+
+// Responsive general para temas
+@media (max-width: v.$breakpoint-md) {
+  .mobile-only {
+    display: block;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+}
+
+@media (min-width: calc(v.$breakpoint-md + 1px)) {
+  .mobile-only {
+    display: none;
+  }
+
+  .desktop-only {
+    display: block;
+  }
+}
+
+// Responsive para dropdown
+@media (max-width: v.$breakpoint-md) {
+  .dropdown {
+    .dropdown-menu {
+      position: fixed;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      border-radius: v.$border-radius-lg v.$border-radius-lg 0 0;
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+
+    .accessibility-menu {
+      min-width: auto;
+      max-width: none;
+    }
+  }
+
+  .skip-link {
+    left: v.$spacing-2;
+    top: v.$spacing-2;
+    font-size: v.$font-size-sm;
+    padding: v.$spacing-2;
+  }
+}

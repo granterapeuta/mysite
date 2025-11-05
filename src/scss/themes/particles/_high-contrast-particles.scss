@@ -1,0 +1,31 @@
+// src/scss/themes/particles/_high-contrast-particles.scss
+[data-theme="high-contrast"],
+.theme-high-contrast {
+  --particles-opacity: 0.15;
+  --particles-size-min: 1;
+  --particles-size-max: 2;
+  --particles-speed: 0.4;
+  --particles-count: 40;
+  --particles-line-linked: false;
+  --particles-blur: 0;
+
+  --particles-color-1: rgba(255, 255, 255, 0.1);
+  --particles-color-2: rgba(255, 255, 255, 0.08);
+  --particles-color-3: rgba(255, 255, 255, 0.06);
+  --particles-color-4: rgba(255, 255, 255, 0.08);
+  --particles-color-5: rgba(255, 255, 255, 0.05);
+  --particles-color-6: rgba(255, 255, 255, 0.07);
+
+  --particles-colors-array: "[rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.07)]";
+
+  --particles-interaction-opacity: 0.08;
+  --particles-mobile-opacity: 0.12;
+}
+
+@media (prefers-contrast: high) {
+  :root {
+    --particles-opacity: 0.1;
+    --particles-count: 20;
+    --particles-speed: 0.3;
+  }
+}

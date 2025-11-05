@@ -1,0 +1,20 @@
+// src/scss/components/_intro.scss
+@use '../abstracts/variables' as v;
+
+.intro {
+  padding: var(--spacing-8, v.$spacing-8) 0;
+  background: var(--bg-primary, v.$white);
+  color: var(--text-primary, v.$gray-900);
+
+  &-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+
+    p {
+      margin-bottom: var(--spacing-4, v.$spacing-4);
+      font-size: var(--font-size-lg, v.$font-size-lg);
+      color: var(--text-secondary, v.$gray-600);
+    }
+  }
+}

@@ -1,0 +1,23 @@
+// src/scss/components/_footer.scss
+.footer {
+  background: var(--bg-tertiary, #e9ecef);
+  color: var(--text-secondary, #6c757d);
+  padding: var(--spacing-6, 2rem) 0;
+  text-align: center;
+  border-top: 1px solid var(--border-color, #dee2e6);
+
+  .social-links {
+    margin-top: var(--spacing-4, 1rem);
+
+    a {
+      color: var(--accent-primary, #3cc88f);
+      text-decoration: none;
+      margin: 0 var(--spacing-3, 0.75rem);
+      transition: var(--transition-base, all 0.3s ease);
+
+      &:hover {
+        color: var(--accent-secondary, #335b9a);
+      }
+    }
+  }
+}
