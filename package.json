@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.co/granterapeuta/mysite/issues"
   },
-  "homepage": "https://github.com/granterapeuta/mysite#readme",
+  "homepage": "https://github.com/granterapeuta/mysite/",
   "devDependencies": {
     "autoprefixer": "^10.4.16",
     "cross-env": "^7.0.3",
