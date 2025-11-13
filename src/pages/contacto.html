@@ -6,6 +6,9 @@
     <title>Salud Integral - Germán Rojas Varela | Contacto</title>
     <meta name="description" content="Ponte en contacto con Germán Rojas Varela para consultas, terapias y orientación personalizada. Un espacio para sanar cuerpo, mente y alma.">
     <link rel="stylesheet" href="../../assets/css/main.css">
+    <!-- Calendly link widget -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body>
 <a href="#main-content" class="skip-link"><span class="skip-icon">🌿</span><span class="skip-text">Saltar al contenido</span></a>
@@ -40,7 +43,8 @@
         <div class="container">
             <h2 id="contacto-title" class="section-title">Envíame un mensaje</h2>
 
-            <form class="contact-form" action="#" method="post" aria-label="Formulario de contacto">
+            <!-- Formulario integrado con Formspree -->
+            <form class="contact-form" action="https://formspree.io/f/xyzlzngj" method="POST" aria-label="Formulario de contacto">
                 <div class="form-group">
                     <label for="nombre">Nombre completo</label>
                     <input type="text" id="nombre" name="nombre" required>
@@ -59,12 +63,32 @@
                 <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
             </form>
 
-            <div class="contact-info">
-                <h3>Centro de Salud Integral</h3>
-                <p><strong>Terapeuta:</strong> Germán Rojas Varela</p>
-                <p><strong>Email:</strong> <a href="mailto:granterapeuta@gmail.com">granterapeuta@gmail.com</a></p>
-                <p><strong>Teléfono / WhatsApp:</strong> <a href="tel:+34600000000">+34 123 456 798</a></p>
-                <p><strong>Ubicación:</strong> Sesiones presenciales y online</p>
+            <div class="contact-options">
+                <h3>Otras formas de contacto</h3>
+                <div class="options-grid">
+                    <div class="contact-option">
+                        <h4>Agenda una cita</h4>
+                        <p>Reserva una sesión en línea o presencial directamente en mi calendario</p>
+                        <button class="btn btn-secondary" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/granterapeuta'}); return false;">
+                            Reservar Cita
+                        </button>
+                    </div>
+                    <div class="contact-option">
+                        <h4>Contacto directo</h4>
+                        <p>Comunícate conmigo directamente a través de:</p>
+                        <div class="contact-buttons">
+                            <button class="btn btn-whatsapp" id="whatsapp-btn">
+                                <span class="btn-icon">💬</span> WhatsApp
+                            </button>
+                            <button class="btn btn-phone" id="phone-btn">
+                                <span class="btn-icon">📞</span> Llamar
+                            </button>
+                            <button class="btn btn-email" id="email-btn">
+                                <span class="btn-icon">✉️</span> Email
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -77,6 +101,10 @@
 </footer>
 
 <script type="module" src="../../assets/js/main.js"></script>
-<script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+<!-- Nuevo archivo para gestión de contactos -->
+<script src="../../assets/js/contact-manager.js"></script>
+<script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
