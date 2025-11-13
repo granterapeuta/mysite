@@ -6,6 +6,14 @@
   text-align: center;
   border-top: 1px solid var(--border-color, #dee2e6);
 
+  .footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
   .social-links {
     margin-top: var(--spacing-4, 1rem);
 
@@ -18,6 +26,23 @@
       &:hover {
         color: var(--accent-secondary, #335b9a);
       }
+    }
+  }
+
+  .footer-link {
+    color: var(--accent-tertiary, #3cc88f);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color, #dee2e6);
+    border-radius: 6px;
+    transition: var(--transition-base, all 0.3s ease);
+    background: var(--bg-tertiary, #e9ecef);
+    
+    &:hover {
+      background: var(--bg-secondary, #335b9a);
+      color: var(--accent-secondary, #3cc88f);
+      border-color: var(--border-color, #dee2e6);
+      transform: translateY(-2px);
     }
   }
 }
