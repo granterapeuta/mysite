@@ -3,35 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salud Integral - Germán Rojas Varela | Terapeuta Holístico</title>
-    <meta name="description" content="Centro de Salud Integral dirigido por Germán Rojas Varela. Terapias naturales, hipnosis clínica, reiki, regresiones, PNL, biomagnetismo y más. Transformación y equilibrio físico, mental y espiritual.">
+    <title>Terapias | Salud Integral - Germán Rojas Varela</title>
+    <meta name="description" content="Terapias naturales, hipnosis clínica, reiki, regresiones, PNL, biomagnetismo y más. Transformación y equilibrio físico, mental y espiritual.">
     <link rel="stylesheet" href="../../assets/css/main.css">
 </head>
 <body>
+
+<!-- Skip Link -->
 <a href="#main-content" class="skip-link">
     <span class="skip-icon">🌿</span>
-    <span class="skip-text">Saltar al contenido principal</span>
+    <span class="skip-text">Saltar al contenido</span>
 </a>
 
+<!-- Navegación -->
 <nav class="navbar" aria-label="Navegación principal">
     <div class="nav-container">
+
         <div class="nav-brand">
             <a href="../../index.html" class="brand-link">
-                <h1>Germán Rojas Varela</h1>
-                <img src="../../assets/icons/es-variant.svg" alt="Español" class="language-flag">
+                <h1>Salud Integral</h1>
             </a>
         </div>
 
         <ul class="nav-menu">
             <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="sobre-mi.html">Sobre mí</a></li>
             <li><a href="terapias.html" aria-current="page">Terapias</a></li>
-            <li><a href="enfermedades.html">Causas</a></li>
+            <li><a href="enfermedades.html">Enfermedades</a></li>
             <li><a href="contacto.html">Contacto</a></li>
         </ul>
+
+        <!-- Controles de tema y accesibilidad -->
+        <div class="nav-controls">
+            <div class="dropdown theme-dropdown">
+                <button class="nav-button dropdown-toggle"
+                        id="theme-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-label="Cambiar tema">
+                    <span class="button-text">Tema</span>
+                </button>
+                <ul class="dropdown-menu theme-menu" aria-labelledby="theme-toggle">
+                    <li><button class="dropdown-item theme-option" data-theme="light">🌞 Claro</button></li>
+                    <li><button class="dropdown-item theme-option" data-theme="dark">🌙 Oscuro</button></li>
+                    <li><button class="dropdown-item theme-option" data-theme="sepia">📜 Sepia</button></li>
+                </ul>
+            </div>
+
+            <button class="nav-button menu-toggle"
+                    id="menu-toggle"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu">
+                <span class="hamburger-icon"></span>
+            </button>
+        </div>
     </div>
 </nav>
 
+<!-- Menú móvil -->
+<div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-header">
+        <button class="close-button" id="close-menu-toggle" aria-label="Cerrar menú">
+            <span class="close-icon">×</span>
+        </button>
+    </div>
+    <ul class="mobile-nav">
+        <li><a href="../../index.html">Inicio</a></li>
+        <li><a href="sobre-mi.html">Sobre mí</a></li>
+        <li><a href="terapias.html" aria-current="page">Terapias</a></li>
+        <li><a href="enfermedades.html">Enfermedades</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+</div>
+
+<div id="menu-overlay" class="menu-overlay" aria-hidden="true"></div>
+
+<!-- Contenido principal -->
 <main id="main-content">
+
+    <!-- Hero Section -->
     <section class="hero" aria-labelledby="hero-title">
         <div class="container">
             <h1 id="hero-title" class="hero-title">Terapias Naturales para el Equilibrio Integral</h1>
@@ -43,41 +94,56 @@
         <div class="container">
             <h2 id="terapias-title" class="section-title">Terapias Disponibles</h2>
 
-            <div class="terapia-card">
-                <h3>🌸 Reiki</h3>
-                <p>Canalización de energía universal para equilibrar tus centros energéticos (chakras), reducir el estrés y fomentar la sanación natural. Ideal para revitalizar mente y cuerpo.</p>
+            <div class="terapias-grid">
+                <article class="terapia-card">
+                    <div class="terapia-icon">🌸</div>
+                    <h3>Reiki</h3>
+                    <p>Canalización de energía universal para equilibrar tus centros energéticos (chakras), reducir el estrés y fomentar la sanación natural. Ideal para revitalizar mente y cuerpo.</p>
+                </article>
+
+                <article class="terapia-card">
+                    <div class="terapia-icon">💫</div>
+                    <h3>Hipnosis Clínica</h3>
+                    <p>Accede a tu subconsciente para liberar bloqueos, miedos o patrones repetitivos. Una herramienta profunda para reconectar con tu poder interior.</p>
+                </article>
+
+                <article class="terapia-card">
+                    <div class="terapia-icon">🌿</div>
+                    <h3>Regresiones</h3>
+                    <p>Exploración de experiencias pasadas (de esta vida o anteriores) que pueden estar influyendo en tu presente. Permite comprender y sanar desde la raíz.</p>
+                </article>
+
+                <article class="terapia-card">
+                    <div class="terapia-icon">🧲</div>
+                    <h3>Biomagnetismo</h3>
+                    <p>Equilibrio del pH corporal mediante imanes terapéuticos. Favorece la armonización de órganos, el sistema inmunológico y la eliminación de virus o bacterias.</p>
+                </article>
+
+                <article class="terapia-card">
+                    <div class="terapia-icon">🪞</div>
+                    <h3>PNL y Coaching Emocional</h3>
+                    <p>Reprogramación de pensamientos y creencias limitantes para recuperar tu confianza y bienestar. Aprende a crear la realidad que deseas desde tu interior.</p>
+                </article>
             </div>
 
-            <div class="terapia-card">
-                <h3>💫 Hipnosis Clínica</h3>
-                <p>Accede a tu subconsciente para liberar bloqueos, miedos o patrones repetitivos. Una herramienta profunda para reconectar con tu poder interior.</p>
-            </div>
-
-            <div class="terapia-card">
-                <h3>🌿 Regresiones</h3>
-                <p>Exploración de experiencias pasadas (de esta vida o anteriores) que pueden estar influyendo en tu presente. Permite comprender y sanar desde la raíz.</p>
-            </div>
-
-            <div class="terapia-card">
-                <h3>🧲 Biomagnetismo</h3>
-                <p>Equilibrio del pH corporal mediante imanes terapéuticos. Favorece la armonización de órganos, el sistema inmunológico y la eliminación de virus o bacterias.</p>
-            </div>
-
-            <div class="terapia-card">
-                <h3>🪞 PNL y Coaching Emocional</h3>
-                <p>Reprogramación de pensamientos y creencias limitantes para recuperar tu confianza y bienestar. Aprende a crear la realidad que deseas desde tu interior.</p>
+            <div class="cta-section">
+                <h3>¿No encuentras la terapia adecuada?</h3>
+                <p>Agenda una evaluación gratuita para determinar cuál es el mejor enfoque para tu situación específica.</p>
+                <a href="contacto.html" class="btn btn-primary">Consulta Gratuita</a>
             </div>
         </div>
     </section>
 </main>
 
+<!-- Footer -->
 <footer class="footer">
     <div class="container">
-        <p>&copy; <span id="current-year">2025</span> Germán Rojas Varela. Centro de Salud Integral.</p>
+        <p>&copy; <span id="current-year">2025</span> Salud Integral - Germán Rojas Varela. Todos los derechos reservados.</p>
     </div>
 </footer>
 
 <script type="module" src="../../assets/js/main.js"></script>
+<script src="../../assets/js/contact-manager.js"></script>
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>

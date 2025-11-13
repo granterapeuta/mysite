@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salud Integral - Germán Rojas Varela | Contacto</title>
+    <title>Contacto | Salud Integral - Germán Rojas Varela</title>
     <meta name="description" content="Ponte en contacto con Germán Rojas Varela para consultas, terapias y orientación personalizada. Un espacio para sanar cuerpo, mente y alma.">
     <link rel="stylesheet" href="../../assets/css/main.css">
     <!-- Calendly link widget -->
@@ -11,27 +11,81 @@
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body>
-<a href="#main-content" class="skip-link"><span class="skip-icon">🌿</span><span class="skip-text">Saltar al contenido</span></a>
 
+<!-- Skip Link -->
+<a href="#main-content" class="skip-link">
+    <span class="skip-icon">🌿</span>
+    <span class="skip-text">Saltar al contenido</span>
+</a>
+
+<!-- Navegación -->
 <nav class="navbar" aria-label="Navegación principal">
     <div class="nav-container">
+
         <div class="nav-brand">
             <a href="../../index.html" class="brand-link">
-                <h1>Germán Rojas Varela</h1>
-                <img src="../../assets/icons/es-variant.svg" alt="Español" class="language-flag">
+                <h1>Salud Integral</h1>
             </a>
         </div>
 
         <ul class="nav-menu">
             <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="sobre-mi.html">Sobre mí</a></li>
             <li><a href="terapias.html">Terapias</a></li>
-            <li><a href="enfermedades.html">Causas</a></li>
+            <li><a href="enfermedades.html">Enfermedades</a></li>
             <li><a href="contacto.html" aria-current="page">Contacto</a></li>
         </ul>
+
+        <!-- Controles de tema y accesibilidad -->
+        <div class="nav-controls">
+            <div class="dropdown theme-dropdown">
+                <button class="nav-button dropdown-toggle"
+                        id="theme-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-label="Cambiar tema">
+                    <span class="button-text">Tema</span>
+                </button>
+                <ul class="dropdown-menu theme-menu" aria-labelledby="theme-toggle">
+                    <li><button class="dropdown-item theme-option" data-theme="light">🌞 Claro</button></li>
+                    <li><button class="dropdown-item theme-option" data-theme="dark">🌙 Oscuro</button></li>
+                    <li><button class="dropdown-item theme-option" data-theme="sepia">📜 Sepia</button></li>
+                </ul>
+            </div>
+
+            <button class="nav-button menu-toggle"
+                    id="menu-toggle"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu">
+                <span class="hamburger-icon"></span>
+            </button>
+        </div>
     </div>
 </nav>
 
+<!-- Menú móvil -->
+<div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-header">
+        <button class="close-button" id="close-menu-toggle" aria-label="Cerrar menú">
+            <span class="close-icon">×</span>
+        </button>
+    </div>
+    <ul class="mobile-nav">
+        <li><a href="../../index.html">Inicio</a></li>
+        <li><a href="sobre-mi.html">Sobre mí</a></li>
+        <li><a href="terapias.html">Terapias</a></li>
+        <li><a href="enfermedades.html">Enfermedades</a></li>
+        <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+    </ul>
+</div>
+
+<div id="menu-overlay" class="menu-overlay" aria-hidden="true"></div>
+
+<!-- Contenido principal -->
 <main id="main-content">
+
+    <!-- Hero Section -->
     <section class="hero" aria-labelledby="hero-title">
         <div class="container">
             <h1 id="hero-title" class="hero-title">Contacto y Consultas</h1>
@@ -94,9 +148,10 @@
     </section>
 </main>
 
+<!-- Footer -->
 <footer class="footer">
     <div class="container">
-        <p>&copy; <span id="current-year">2025</span> Germán Rojas Varela. Centro de Salud Integral.</p>
+        <p>&copy; <span id="current-year">2025</span> Salud Integral - Germán Rojas Varela. Todos los derechos reservados.</p>
     </div>
 </footer>
 

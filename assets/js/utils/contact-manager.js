@@ -14,7 +14,7 @@ class ContactManager {
 
         this.init();
     }
-
+    
     /**
      * Decodifica datos en base64 (solo para ofuscar ligeramente)
      */
@@ -39,7 +39,8 @@ class ContactManager {
     setupWhatsAppButton() {
         const whatsappBtn = document.getElementById('whatsapp-btn');
         if (whatsappBtn) {
-            whatsappBtn.addEventListener('click', () => {
+            whatsappBtn.addEventListener('click', (e) => {
+                e.preventDefault();
                 this.openWhatsApp();
             });
         }
@@ -51,7 +52,8 @@ class ContactManager {
     setupPhoneButton() {
         const phoneBtn = document.getElementById('phone-btn');
         if (phoneBtn) {
-            phoneBtn.addEventListener('click', () => {
+            phoneBtn.addEventListener('click', (e) => {
+                e.preventDefault();
                 this.makePhoneCall();
             });
         }
@@ -63,7 +65,8 @@ class ContactManager {
     setupEmailButton() {
         const emailBtn = document.getElementById('email-btn');
         if (emailBtn) {
-            emailBtn.addEventListener('click', () => {
+            emailBtn.addEventListener('click', (e) => {
+                e.preventDefault();
                 this.sendEmail();
             });
         }
@@ -74,13 +77,10 @@ class ContactManager {
      */
     openWhatsApp() {
         const phoneNumber = this.contactData.whatsapp;
-        const message = encodeURIComponent('Hola, me gustaría obtener más información sobre sus servicios.');
+        const message = encodeURIComponent('Hola, me gustaría obtener más información sobre sus servicios de salud integral.');
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
-        // Abre en nueva pestaña
         window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-
-        // Trackeo opcional (si tienes analytics)
         this.trackContact('whatsapp');
     }
 
@@ -90,8 +90,7 @@ class ContactManager {
     makePhoneCall() {
         const phoneNumber = this.contactData.phone.replace(/\s/g, '');
 
-        // Confirmación para llamadas (opcional)
-        if (confirm('¿Deseas llamar ahora?')) {
+        if (confirm('¿Deseas llamar ahora a Germán Rojas Varela?')) {
             window.location.href = `tel:${phoneNumber}`;
             this.trackContact('phone');
         }
@@ -102,8 +101,8 @@ class ContactManager {
      */
     sendEmail() {
         const email = this.contactData.email;
-        const subject = encodeURIComponent('Consulta - Salud Integral');
-        const body = encodeURIComponent(`Hola Germán,\n\nMe gustaría obtener más información sobre sus servicios de salud integral.\n\nSaludos.');
+        const subject = encodeURIComponent('Consulta - Salud Integral con Germán Rojas Varela');
+        const body = encodeURIComponent(`Hola Germán,\n\nMe gustaría obtener más información sobre sus servicios de salud integral.\n\nMi consulta es:\n\nSaludos cordiales.`);
 
         window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
         this.trackContact('email');
@@ -113,10 +112,8 @@ class ContactManager {
      * Función para trackeo de interacciones (opcional)
      */
     trackContact(method) {
-        // Aquí puedes integrar con Google Analytics, etc.
         console.log(`Contacto realizado vía: ${method}`);
 
-        // Ejemplo con Google Analytics (si lo tienes)
         if (typeof gtag !== 'undefined') {
             gtag('event', 'contact', {
                 'event_category': 'engagement',
@@ -144,8 +141,3 @@ class ContactManager {
 
 // Inicialización automática cuando se carga el script
 const contactManager = new ContactManager();
-
-// También se puede usar como módulo
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = ContactManager;
-}
