@@ -6,6 +6,7 @@ import { NavigationManager } from '../components/navigation/navigation-manager.j
 import { ThemeManager } from '../components/themes/theme-manager.js';
 import { ParticleSystem } from '../components/particles/particle-system.js';
 import { FooterManager } from '../components/ui/footer-manager.js';
+import { ContactManager } from '../utils/contact-manager.js';
 
 class App {
     constructor() {
@@ -38,31 +39,50 @@ class App {
             {
                 name: 'navigation',
                 Class: NavigationManager,
-                condition: () => true
+                condition: () => document.querySelector('.navbar'),
+                priority: 10
             },
             {
                 name: 'theme',
                 Class: ThemeManager,
-                condition: () => true
+                condition: () => true,
+                priority: 9
+            },
+            {
+                name: 'contact',
+                Class: ContactManager,
+                condition: () => this.hasContactElements(),
+                priority: 8
             },
             {
                 name: 'particles',
                 Class: ParticleSystem,
                 condition: () => document.getElementById('particles-canvas'),
-                args: ['particles-canvas']
+                args: ['particles-canvas'],
+                priority: 5
             },
             {
                 name: 'footer',
                 Class: FooterManager,
-                condition: () => document.querySelector('footer')
+                condition: () => document.querySelector('footer')),
+        priority: 3
             }
         ];
-
+        
+        // Ordenar por prioridad
+        moduleConfigs.sort((a, b) => b.priority - a.priority);
+        
         for (const config of moduleConfigs) {
             if (config.condition()) {
                 try {
                     const args = config.args || [];
                     const instance = new config.Class(...args);
+
+                    // Inicializar módulo si tiene método init
+                    if (typeof instance.init === 'function') {
+                        await instance.init();
+                    }
+                    
                     this.modules.set(config.name, instance);
                     this.logger.success(`${config.name} inicializado`);
 
@@ -79,7 +99,14 @@ class App {
             }
         }
     }
-
+    
+    /**
+     * Verifica si hay elementos de contacto en la página
+     */
+    hasContactElements() {
+        return document.querySelector('#whatsapp-btn, #phone-btn, #email-btn, #footer-email, #footer-whatsapp, .contact-form') !== null;
+    }
+    
     setupGlobalAPI() {
         window.app = {
             // Acceso a módulos
@@ -89,7 +116,13 @@ class App {
             // Estado
             getStatus: () => ({
                 initialized: this.isInitialized,
-                modules: Array.from(this.modules.keys()),
+                modules: Array.from(this.modules.keys()).map(name => {
+                    const module = this.modules.get(name);
+                    return {
+                        name,
+                        status: module.getStatus ? module.getStatus() : 'active'
+                    };
+                }),
                 version: '1.0.0'
             }),
 
@@ -101,6 +134,7 @@ class App {
         // Comandos de debug
         console.log('🚀 App Comandos:');
         console.log('- app.getModule("theme")');
+        console.log('- app.getModule("contact")');
         console.log('- app.getStatus()');
         console.log('- app.eventBus.emit("theme:change", {theme: "dark"})');
     }

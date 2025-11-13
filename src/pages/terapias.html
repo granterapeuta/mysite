@@ -136,16 +136,21 @@
 </main>
 
 <!-- Footer -->
-<footer class="footer">
+<footer class="footer" role="contentinfo">
     <div class="container">
         <p>&copy; <span id="current-year">2025</span> Salud Integral - Germán Rojas Varela. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="#" id="footer-email" class="footer-link">Email</a>
+            <a href="#" id="footer-whatsapp" class="footer-link">WhatsApp</a>
+            <a href="#" id="footer-facebook" class="footer-link">Facebook</a>
+        </div>
     </div>
 </footer>
 
+<div class="particles-container" aria-hidden="true">
+    <canvas id="particles-canvas"></canvas>
+</div>
+
 <script type="module" src="../../assets/js/main.js"></script>
-<script src="../../assets/js/contact-manager.js"></script>
-<script>
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-</script>
 </body>
 </html>
