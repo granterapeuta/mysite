@@ -1,0 +1,16 @@
+// src/scss/themes/accessibility/_light-theme.scss
+[data-theme="light"] {
+  --bg-primary: #f9fcfb;
+  --bg-secondary: #eaf7f4;
+  --text-primary: #1f3833;
+  --text-secondary: #527a73;
+  --accent-color: #69c9b9;
+  --border-color: #d6ebe6;
+
+  --navbar-bg: #ffffff;
+  --card-bg: #ffffff;
+  --button-bg: #69c9b9;
+  --button-hover-bg: #57bfa0;
+
+  --focus-ring: 0 0 0 3px rgba(105, 201, 185, 0.35);
+}

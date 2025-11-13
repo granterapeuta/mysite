@@ -1,0 +1,53 @@
+// src/scss/themes/accessibility/_base-theme.scss
+:root {
+  // Colores base — Verde suave & Azul claro
+  --bg-primary: #f9fcfb;
+  --bg-secondary: #eaf7f4;
+  --bg-tertiary: #dbeff0;
+  --bg-inverse: #1f3833;
+
+  --text-primary: #1f3833;
+  --text-secondary: #527a73;
+  --text-muted: #8aa7a0;
+  --text-inverse: #ffffff;
+  --text-on-accent: #ffffff;
+
+  --accent-primary: #69c9b9;    // Verde agua
+  --accent-secondary: #8ab6d6;  // Azul cielo
+  --accent-success: #57bfa0;
+  --accent-danger: #e57474;
+  --accent-warning: #f3c97b;
+  --accent-info: #a5d8e0;
+
+  // Bordes y efectos
+  --border-color: #d6ebe6;
+  --border-light: #e3f2ef;
+  --border-dark: #aaccc3;
+
+  --focus-ring: 0 0 0 3px rgba(105, 201, 185, 0.4);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  // Tipografía
+  --font-family-base: 'Merriweather', 'Georgia', serif;
+  --font-family-heading: 'Lato', sans-serif;
+  --font-size-base: 1rem;
+  --line-height-base: 1.7;
+
+  // Componentes
+  --card-bg: #ffffff;
+  --button-bg: var(--accent-primary);
+  --button-text: #ffffff;
+  --button-hover-bg: #57bfa0;
+  --input-bg: #ffffff;
+  --input-border: var(--border-color);
+
+  // Transiciones
+  --transition-base: all 0.3s ease;
+  --transition-fast: all 0.15s ease;
+
+  // Partículas / efectos
+  --particles-opacity: 0.5;
+  --particles-count: 60;
+}

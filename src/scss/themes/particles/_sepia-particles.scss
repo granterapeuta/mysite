@@ -1,0 +1,23 @@
+// src/scss/themes/particles/_sepia-particles.scss
+[data-theme="sepia"],
+.theme-sepia {
+  --particles-opacity: 0.5;
+  --particles-size-min: 1;
+  --particles-size-max: 2.5;
+  --particles-speed: 0.5;
+  --particles-count: 60;
+  --particles-blur: 1;
+  --particles-line-linked: false;
+
+  --particles-color-1: rgba(139, 109, 66, 0.2);
+  --particles-color-2: rgba(174, 136, 82, 0.18);
+  --particles-color-3: rgba(205, 170, 125, 0.15);
+  --particles-color-4: rgba(160, 120, 70, 0.16);
+  --particles-color-5: rgba(240, 220, 180, 0.12);
+  --particles-color-6: rgba(210, 180, 140, 0.14);
+
+  --particles-colors-array: "[rgba(139, 109, 66, 0.2), rgba(174, 136, 82, 0.18), rgba(205, 170, 125, 0.15), rgba(160, 120, 70, 0.16), rgba(240, 220, 180, 0.12), rgba(210, 180, 140, 0.14)]";
+
+  --particles-interaction-opacity: 0.35;
+  --particles-mobile-opacity: 0.7;
+}

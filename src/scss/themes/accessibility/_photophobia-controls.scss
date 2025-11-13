@@ -1,0 +1,630 @@
+// src/scss/accessibility/_photophobia-controls.scss
+
+// ===== CONTROLES DE FOTOFOBIA =====
+.photophobia-controls {
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  margin-top: 1rem;
+  border: 1px solid var(--border-color);
+  display: none; // Oculto por defecto
+
+  // Mostrar cuando el contenedor tenga la clase visible
+  &.visible {
+    display: block !important;
+    animation: slideDown 0.3s ease;
+  }
+
+  .slider-container {
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      font-weight: 500;
+
+      .slider-value {
+        background: var(--bg-primary);
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        font-weight: bold;
+        min-width: 2rem;
+        text-align: center;
+        border: 1px solid var(--border-color);
+      }
+    }
+
+    .slider {
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--border-color);
+      outline: none;
+      opacity: 0.7;
+      transition: all 0.2s ease;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &:focus {
+        opacity: 1;
+        box-shadow: 0 0 0 2px var(--accent-primary);
+      }
+
+      // Webkit (Chrome, Safari, Edge)
+      &::-webkit-slider-thumb {
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: var(--accent-primary);
+        cursor: pointer;
+        border: 2px solid var(--bg-primary);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: all 0.2s ease;
+
+        &:hover {
+          transform: scale(1.1);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+        }
+      }
+
+      // Firefox
+      &::-moz-range-thumb {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: var(--accent-primary);
+        cursor: pointer;
+        border: 2px solid var(--bg-primary);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: all 0.2s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      // Track styles
+      &::-webkit-slider-track {
+        width: 100%;
+        height: 6px;
+        border-radius: 3px;
+        background: var(--border-color);
+        cursor: pointer;
+      }
+
+      &::-moz-range-track {
+        width: 100%;
+        height: 6px;
+        border-radius: 3px;
+        background: var(--border-color);
+        cursor: pointer;
+        border: none;
+      }
+    }
+  }
+}
+
+// ===== CONTROLES DE INTENSIDAD GENERALES =====
+.intensity-control {
+  display: none;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: var(--bg-secondary);
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+
+  // Mostrar cuando tenga la clase visible
+  &.visible {
+    display: flex !important;
+    animation: slideDown 0.3s ease;
+  }
+
+  .intensity-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    font-weight: 500;
+    min-width: 80px;
+  }
+
+  .intensity-slider {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--border-color);
+    outline: none;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:focus {
+      opacity: 1;
+      box-shadow: 0 0 0 2px var(--accent-primary);
+    }
+
+    // Webkit
+    &::-webkit-slider-thumb {
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-primary);
+      cursor: pointer;
+      border: 2px solid var(--bg-primary);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease;
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    // Firefox
+    &::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-primary);
+      cursor: pointer;
+      border: 2px solid var(--bg-primary);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    // Track
+    &::-webkit-slider-track {
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--border-color);
+      cursor: pointer;
+    }
+
+    &::-moz-range-track {
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--border-color);
+      cursor: pointer;
+      border: none;
+    }
+  }
+
+  .intensity-value {
+    min-width: 2rem;
+    text-align: center;
+    font-weight: bold;
+    color: var(--accent-primary);
+    background: var(--bg-primary);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// ===== ANIMACIONES =====
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ===== SISTEMA DE REFRESH RATE EN 10 NIVELES =====
+
+// Nivel 0-1: Refresh rate muy crítico - Máxima reducción
+[data-refresh-rate="0"],
+[data-refresh-rate="1"] {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  // Elementos que causan molestias visuales
+  .particles-container,
+  .floating-element,
+  .pulse-effect,
+  .bounce-effect,
+  .shimmer-effect,
+  [data-animate],
+  [data-parallax] {
+    display: none !important;
+  }
+
+  // Eliminar todos los efectos hover
+  .btn:hover,
+  .skill-card:hover,
+  .nav-menu a:hover,
+  .social-link:hover {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  // Reducir parpadeos de cursor
+  caret-color: transparent !important;
+
+  ::selection {
+    background: rgba(255, 255, 255, 0.05) !important;
+  }
+}
+
+// Nivel 2-3: Refresh rate crítico - Reducción extrema
+[data-refresh-rate="2"],
+[data-refresh-rate="3"] {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .particles-container,
+  .floating-element {
+    display: none !important;
+  }
+
+  .pulse-effect,
+  .bounce-effect {
+    animation: none !important;
+    opacity: 0.8 !important;
+  }
+
+  // Efectos hover mínimos
+  .btn:hover,
+  .skill-card:hover {
+    transform: none !important;
+    transition-duration: 0.01s !important;
+  }
+
+  // Videos con reducción de movimiento
+  video, iframe {
+    filter: brightness(0.85) contrast(1.15);
+  }
+}
+
+// Nivel 4-5: Refresh rate bajo - Reducción significativa
+[data-refresh-rate="4"],
+[data-refresh-rate="5"] {
+  * {
+    animation-duration: 0.1s !important;
+    transition-duration: 0.1s !important;
+  }
+
+  .particles-container {
+    animation: none !important;
+    opacity: 0.2;
+  }
+
+  .pulse-effect {
+    animation-duration: 2s !important;
+  }
+
+  // Efectos hover reducidos
+  .btn:hover {
+    transform: translateY(-1px) !important;
+    transition-duration: 0.05s !important;
+  }
+
+  .skill-card:hover {
+    transform: translateY(-2px) !important;
+    transition-duration: 0.05s !important;
+  }
+}
+
+// Nivel 6-7: Refresh rate medio - Reducción moderada
+[data-refresh-rate="6"],
+[data-refresh-rate="7"] {
+  * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.2s !important;
+  }
+
+  .particles-container {
+    animation-duration: 3s !important;
+    opacity: 0.5;
+  }
+
+  .btn:hover {
+    transform: translateY(-1px) scale(1.02) !important;
+    transition-duration: 0.1s !important;
+  }
+
+  .skill-card:hover {
+    transform: translateY(-3px) !important;
+    transition-duration: 0.15s !important;
+  }
+}
+
+// Nivel 8-9: Refresh rate normal-alto - Mínima reducción
+[data-refresh-rate="8"],
+[data-refresh-rate="9"] {
+  * {
+    animation-duration: 0.5s !important;
+    transition-duration: 0.3s !important;
+  }
+
+  .particles-container {
+    animation-duration: 2s !important;
+    opacity: 0.8;
+  }
+}
+
+// Nivel 10: Refresh rate máximo - Sin restricciones
+[data-refresh-rate="10"] {
+  // Animaciones normales - sin restricciones
+  // (No se aplican reglas específicas)
+}
+
+// ===== EFECTOS ESPECÍFICOS PARA FOTOFOBIA + REFRESH RATE =====
+[data-photophobia-mode="true"] {
+  // Combinación de fotofobia con refresh rate bajo
+  &[data-refresh-rate="0"],
+  &[data-refresh-rate="1"],
+  &[data-refresh-rate="2"],
+  &[data-refresh-rate="3"] {
+    // Reducción extrema de elementos luminosos
+    .btn-primary,
+    .accent-element,
+    .highlight {
+      opacity: 0.7 !important;
+      filter: brightness(0.8) !important;
+    }
+
+    // Desactivar efectos de tipo "flash"
+    .blink,
+    .flash,
+    .glow {
+      animation: none !important;
+      opacity: 0.6 !important;
+    }
+
+    // Reducir contraste en selecciones
+    ::selection {
+      background: rgba(100, 100, 100, 0.2) !important;
+    }
+
+    // Videos e iframes con máxima reducción
+    video, iframe {
+      filter: brightness(0.8) contrast(1.2) saturate(0.9) !important;
+    }
+  }
+
+  // Fotofobia con refresh rate medio
+  &[data-refresh-rate="4"],
+  &[data-refresh-rate="5"],
+  &[data-refresh-rate="6"] {
+    // Transiciones suavizadas pero controladas
+    * {
+      transition-timing-function: ease-out !important;
+    }
+
+    .btn:focus,
+    .skill-card:focus {
+      transition: all 0.2s ease-out !important;
+    }
+
+    // Reducción moderada de elementos brillantes
+    .btn-primary {
+      opacity: 0.85 !important;
+    }
+  }
+}
+
+// ===== COMPATIBILIDAD CON PREFERENCIAS DEL SISTEMA =====
+@media (prefers-reduced-motion: reduce) {
+  // Respetar preferencias del sistema cuando no hay configuración manual
+  :root:not([data-refresh-rate]) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  // Aplicar estilos de nivel 2 directamente
+  :root:not([data-refresh-rate])[data-photophobia-mode="true"] {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+
+    .particles-container,
+    .floating-element {
+      display: none !important;
+    }
+
+    .pulse-effect,
+    .bounce-effect {
+      animation: none !important;
+      opacity: 0.8 !important;
+    }
+
+    .btn:hover,
+    .skill-card:hover {
+      transform: none !important;
+      transition-duration: 0.01s !important;
+    }
+
+    video, iframe {
+      filter: brightness(0.85) contrast(1.15);
+    }
+
+    // Reducción extrema de elementos luminosos para fotofobia
+    .btn-primary,
+    .accent-element,
+    .highlight {
+      opacity: 0.7 !important;
+      filter: brightness(0.8) !important;
+    }
+
+    .blink,
+    .flash,
+    .glow {
+      animation: none !important;
+      opacity: 0.6 !important;
+    }
+
+    ::selection {
+      background: rgba(100, 100, 100, 0.2) !important;
+    }
+
+    video, iframe {
+      filter: brightness(0.8) contrast(1.2) saturate(0.9) !important;
+    }
+  }
+}
+
+// ===== ESTILOS PARA DARK MODE =====
+[data-theme="dark"] {
+  .photophobia-controls,
+  .intensity-control {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+
+    .slider,
+    .intensity-slider {
+      background: var(--border-color);
+
+      &::-webkit-slider-thumb,
+      &::-moz-range-thumb {
+        border-color: var(--bg-primary);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    .slider-value,
+    .intensity-value {
+      background: var(--bg-primary);
+      border-color: var(--border-color);
+    }
+  }
+}
+
+// ===== RESPONSIVE =====
+@media (max-width: 768px) {
+  .photophobia-controls {
+    padding: 0.75rem;
+    margin-top: 0.75rem;
+
+    .slider-container {
+      margin-bottom: 0.875rem;
+
+      label {
+        font-size: 0.85rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+
+        .slider-value {
+          align-self: flex-end;
+        }
+      }
+    }
+  }
+
+  .intensity-control {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding: 0.625rem;
+
+    .intensity-label {
+      min-width: auto;
+      text-align: left;
+    }
+
+    .intensity-value {
+      align-self: flex-end;
+      margin-top: 0.25rem;
+    }
+  }
+
+  // En móviles, los efectos de refresh rate pueden ser más restrictivos
+  [data-refresh-rate="6"],
+  [data-refresh-rate="7"] {
+    .particles-container {
+      display: none !important;
+    }
+  }
+}
+
+// ===== HIGH CONTRAST MODE SUPPORT =====
+@media (prefers-contrast: high) {
+  .photophobia-controls,
+  .intensity-control {
+    border-width: 2px;
+    border-color: var(--text-primary);
+
+    .slider,
+    .intensity-slider {
+      border: 1px solid var(--text-primary);
+
+      &::-webkit-slider-thumb,
+      &::-moz-range-thumb {
+        border-width: 3px;
+        border-color: var(--text-primary);
+      }
+    }
+
+    .slider-value,
+    .intensity-value {
+      border: 1px solid var(--text-primary);
+      font-weight: 800;
+    }
+  }
+}
+
+// ===== REDUCED MOTION SUPPORT =====
+@media (prefers-reduced-motion: reduce) {
+  .photophobia-controls,
+  .intensity-control {
+    transition: none;
+
+    &.visible {
+      animation: none;
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

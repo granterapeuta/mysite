@@ -1,0 +1,795 @@
+// src/scss/themes/accessibility/_accessibility-modes.scss
+
+@use '../../abstracts/variables' as v;
+
+// ===== MOVIMIENTO REDUCIDO CON INTENSIDADES =====
+
+// Niveles de movimiento reducido
+[data-reduced-motion="1"] {
+  // Reducción leve - Animaciones más lentas pero suaves
+
+  // Aplicar a elementos que comúnmente tienen animaciones
+  .btn,
+  .skill-card,
+  .nav-menu a,
+  .dropdown-toggle,
+  .social-link,
+  .fade-in,
+  .slide-in,
+  [class*="animate-"],
+  [class*="transition-"] {
+    animation-duration: 0.8s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.4s !important;
+    transition-timing-function: ease-out !important;
+  }
+
+  // Efectos hover más suaves
+  .btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    transition-duration: 0.3s;
+  }
+
+  .skill-card:hover {
+    transform: translateY(-3px);
+    transition-duration: 0.3s;
+  }
+
+  // Partículas más lentas
+  .particles-container {
+    animation-duration: 5s !important;
+  }
+}
+
+[data-reduced-motion="2"] {
+  // Reducción media - Animaciones significativamente reducidas
+
+  .btn,
+  .skill-card,
+  .nav-menu a,
+  .dropdown-toggle,
+  .social-link,
+  .fade-in,
+  .slide-in,
+  [class*="animate-"],
+  [class*="transition-"] {
+    animation-duration: 0.3s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.2s !important;
+    transition-timing-function: ease-out !important;
+  }
+
+  // Efectos hover mínimos
+  .btn:hover {
+    transform: translateY(-1px);
+    transition-duration: 0.15s;
+  }
+
+  .skill-card:hover {
+    transform: translateY(-2px);
+    transition-duration: 0.15s;
+  }
+
+  // Reducir partículas
+  .particles-container {
+    animation-duration: 8s !important;
+    opacity: 0.7;
+  }
+
+  // Scroll más rápido
+  html {
+    scroll-behavior: auto !important;
+  }
+}
+
+[data-reduced-motion="3"] {
+  // Reducción alta - Solo animaciones esenciales
+
+  .btn,
+  .skill-card,
+  .nav-menu a,
+  .dropdown-toggle,
+  .social-link,
+  .fade-in,
+  .slide-in,
+  [class*="animate-"],
+  [class*="transition-"] {
+    animation-duration: 0.1s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.05s !important;
+    transition-timing-function: linear !important;
+  }
+
+  // Eliminar efectos hover complejos
+  .btn:hover,
+  .skill-card:hover {
+    transform: none !important;
+  }
+
+  [data-hover-effect] {
+    transition: none !important;
+  }
+
+  // Partículas muy reducidas
+  .particles-container {
+    animation-duration: 12s !important;
+    opacity: 0.3;
+  }
+
+  // Scroll instantáneo
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  // Eliminar animaciones de entrada
+  .fade-in,
+  .slide-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+[data-reduced-motion="4"] {
+  // Sin movimiento - Eliminar todas las animaciones
+
+  // Desactivar TODAS las animaciones y transiciones
+  * {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
+  // Scroll instantáneo
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  // Ocultar partículas
+  .particles-container {
+    display: none !important;
+  }
+
+  // Eliminar todos los efectos hover
+  .btn:hover,
+  .skill-card:hover,
+  .nav-menu a:hover,
+  .dropdown-toggle:hover,
+  .social-link:hover {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  // Forzar estados visibles
+  .fade-in,
+  .slide-in,
+  [class*="animate-"] {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+}
+
+// Compatibilidad con preferencias del sistema
+@media (prefers-reduced-motion: reduce) {
+  :root:not([data-reduced-motion]) {
+    .btn,
+    .skill-card,
+    .nav-menu a,
+    .dropdown-toggle,
+    .social-link {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+
+    .btn:hover,
+    .skill-card:hover {
+      transform: none !important;
+    }
+  }
+}
+
+// ===== MODO DISLEXIA CON INTENSIDAD =====
+
+[data-dyslexia-mode="true"] {
+  font-family: v.$font-family-dyslexia !important;
+  letter-spacing: 0.05em !important;
+
+  // Mejorar contraste de texto
+  color: var(--text-primary, #1a1a1a) !important;
+
+  &[data-dyslexia-intensity="1"] {
+    line-height: v.$line-height-lg;
+    word-spacing: 0.1em;
+    font-size: calc(v.$font-size-base * 1.05);
+  }
+
+  &[data-dyslexia-intensity="2"] {
+    line-height: v.$line-height-xl;
+    word-spacing: 0.15em;
+    font-weight: v.$font-weight-semibold;
+    font-size: calc(v.$font-size-base * 1.08);
+  }
+
+  &[data-dyslexia-intensity="3"] {
+    line-height: v.$line-height-2xl;
+    word-spacing: 0.2em;
+    font-weight: v.$font-weight-bold;
+    font-size: calc(v.$font-size-base * 1.1);
+    letter-spacing: 0.08em;
+  }
+
+  &[data-dyslexia-intensity="4"] {
+    line-height: v.$line-height-3xl;
+    word-spacing: 0.25em;
+    font-weight: v.$font-weight-bold;
+    font-size: calc(v.$font-size-base * 1.12);
+    letter-spacing: 0.1em;
+  }
+
+  &[data-dyslexia-intensity="5"] {
+    line-height: v.$line-height-4xl;
+    word-spacing: 0.3em;
+    font-weight: v.$font-weight-bold;
+    font-size: calc(v.$font-size-base * 1.15);
+    letter-spacing: 0.12em;
+  }
+
+  // Mejoras específicas para modo dislexia
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: v.$font-weight-bold;
+    color: var(--text-primary, #000000) !important;
+  }
+
+  li {
+    margin-bottom: v.$spacing-2;
+  }
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    color: var(--link-color, #0056b3) !important;
+
+    &:hover {
+      text-decoration-thickness: 2px;
+    }
+  }
+}
+
+// ===== MODO LECTURA CON INTENSIDAD =====
+
+[data-reading-mode="true"] {
+  // Configuración base para modo lectura
+  background: var(--reading-bg, linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 100%)) !important;
+  color: var(--reading-text, #2d3748) !important;
+
+  // Tipografía optimizada para lectura
+  font-family: var(--reading-font, 'Georgia', 'Times New Roman', serif) !important;
+  font-size: calc(v.$font-size-base * 1.1);
+  line-height: 1.7;
+  font-weight: 400;
+
+  main {
+    container-type: inline-size;
+  }
+
+  // Encabezados optimizados
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--reading-font, 'Georgia', 'Times New Roman', serif) !important;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--reading-heading, #1a202c) !important;
+    margin-bottom: v.$spacing-4;
+  }
+
+  h1 {
+    font-size: calc(v.$font-size-3xl * 0.9);
+    margin-top: v.$spacing-10;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: calc(v.$font-size-2xl * 0.9);
+    margin-top: v.$spacing-8;
+    border-bottom: 1px solid var(--reading-border, #e2e8f0);
+    padding-bottom: v.$spacing-2;
+  }
+
+  h3 {
+    font-size: calc(v.$font-size-xl * 0.95);
+    margin-top: v.$spacing-6;
+  }
+
+  // Párrafos optimizados
+  p {
+    margin-bottom: v.$spacing-5;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    font-size: calc(v.$font-size-base * 1.08);
+    line-height: 1.75;
+    color: var(--reading-paragraph, #4a5568) !important;
+  }
+
+  // Listas legibles
+  ul, ol {
+    margin: v.$spacing-4 0;
+    padding-left: v.$spacing-6;
+
+    li {
+      margin-bottom: v.$spacing-3;
+      line-height: 1.6;
+    }
+  }
+
+  // Enlaces discretos pero accesibles
+  a {
+    color: var(--reading-link, #2b6cb0) !important;
+    text-decoration: none;
+    border-bottom: 1px solid var(--reading-link-underline, #bee3f8);
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: var(--reading-link-hover, #2c5282) !important;
+      border-bottom-color: var(--reading-link, #2b6cb0);
+      background-color: rgba(66, 153, 225, 0.05);
+    }
+  }
+
+  // Reducir elementos distractivos
+  .particles-container {
+    opacity: 0.1;
+  }
+
+  .navbar {
+    background: var(--reading-navbar, rgba(248, 249, 250, 0.95)) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--reading-border, #e2e8f0);
+  }
+
+  .footer {
+    background: var(--reading-footer, rgba(248, 249, 250, 0.95)) !important;
+    border-top: 1px solid var(--reading-border, #e2e8f0);
+    margin-top: v.$spacing-16;
+  }
+
+  // Tarjetas sutiles
+  .skill-card {
+    background: var(--reading-card, rgba(255, 255, 255, 0.7)) !important;
+    border: 1px solid var(--reading-border, #e2e8f0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    backdrop-filter: blur(8px);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      background: var(--reading-card-hover, rgba(255, 255, 255, 0.9)) !important;
+    }
+  }
+
+  // Botones discretos
+  .btn {
+    background: var(--reading-button, rgba(66, 153, 225, 0.1)) !important;
+    color: var(--reading-button-text, #2b6cb0) !important;
+    border: 1px solid var(--reading-button-border, rgba(66, 153, 225, 0.2));
+
+    &:hover {
+      background: var(--reading-button-hover, rgba(66, 153, 225, 0.15)) !important;
+      border-color: var(--reading-button-border-hover, rgba(66, 153, 225, 0.4));
+      transform: translateY(-1px);
+    }
+  }
+
+  // Navegación sutil
+  .nav-menu a {
+    color: var(--reading-nav-link, #4a5568) !important;
+
+    &:hover {
+      color: var(--reading-nav-link-hover, #2b6cb0) !important;
+      background: rgba(66, 153, 225, 0.05);
+    }
+  }
+
+  // Dropdowns integrados
+  .dropdown-menu {
+    background: var(--reading-dropdown, rgba(255, 255, 255, 0.95)) !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--reading-border, #e2e8f0);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  }
+
+  // Scroll suave
+  scroll-behavior: smooth;
+
+  // Mejorar focus para accesibilidad
+  *:focus {
+    outline: 2px solid var(--reading-focus, rgba(66, 153, 225, 0.5));
+    outline-offset: 2px;
+  }
+
+  // Intensidades del modo lectura
+  &[data-reading-intensity="1"] {
+    .container {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    p, li {
+      line-height: v.$line-height-lg;
+    }
+  }
+
+  &[data-reading-intensity="2"] {
+    .container {
+      max-width: 65ch;
+      margin: 0 auto;
+    }
+
+    p, li {
+      line-height: v.$line-height-xl;
+      font-size: calc(v.$font-size-base * 1.05);
+    }
+
+    h1, h2, h3 {
+      line-height: v.$line-height-lg;
+    }
+  }
+
+  &[data-reading-intensity="3"] {
+    .container {
+      max-width: 60ch;
+      margin: 0 auto;
+    }
+
+    p, li {
+      line-height: v.$line-height-2xl;
+      font-size: calc(v.$font-size-base * 1.08);
+    }
+
+    h1, h2, h3 {
+      line-height: v.$line-height-xl;
+    }
+
+    .section {
+      margin-bottom: v.$spacing-8;
+    }
+  }
+
+  &[data-reading-intensity="4"] {
+    .container {
+      max-width: 55ch;
+      margin: 0 auto;
+    }
+
+    p, li {
+      line-height: v.$line-height-3xl;
+      font-size: calc(v.$font-size-base * 1.1);
+    }
+
+    h1, h2, h3 {
+      line-height: v.$line-height-2xl;
+    }
+
+    .section {
+      margin-bottom: v.$spacing-9;
+    }
+
+    p + p {
+      margin-top: v.$spacing-4;
+    }
+  }
+
+  &[data-reading-intensity="5"] {
+    .container {
+      max-width: 50ch;
+      margin: 0 auto;
+    }
+
+    p, li {
+      line-height: v.$line-height-4xl;
+      font-size: calc(v.$font-size-base * 1.15);
+    }
+
+    h1, h2, h3 {
+      line-height: v.$line-height-3xl;
+      font-size: calc(1em * 1.1);
+    }
+
+    .section {
+      margin-bottom: v.$spacing-10;
+    }
+
+    p + p {
+      margin-top: v.$spacing-5;
+    }
+
+    // Reducir aún más las distracciones
+    .particles-container {
+      display: none;
+    }
+
+    .skill-card {
+      background: var(--reading-card-high, rgba(255, 255, 255, 0.85)) !important;
+    }
+  }
+}
+
+// ===== MODO FOTOFOBIA CON INTENSIDAD =====
+
+[data-photophobia-mode="true"] {
+  background-color: var(--photophobia-bg, #000000) !important;
+  color: var(--photophobia-text, #e0e0e0) !important;
+
+  // Asegurar que todos los fondos sean oscuros
+  .navbar,
+  .footer,
+  .skill-card,
+  .dropdown-menu {
+    background-color: var(--photophobia-element-bg, #1a1a1a) !important;
+    color: var(--photophobia-text, #e0e0e0) !important;
+    border-color: var(--photophobia-border, #333) !important;
+  }
+
+  // Mejorar contraste de texto
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--photophobia-heading, #ffffff) !important;
+  }
+
+  // Reducir brillo de partículas
+  .particles-container {
+    opacity: 0.1;
+  }
+
+  &[data-photophobia-intensity="1"] {
+    filter: brightness(0.9) contrast(1.1) saturate(0.9);
+
+    .btn-primary {
+      opacity: 0.9;
+    }
+  }
+
+  &[data-photophobia-intensity="2"] {
+    filter: brightness(0.8) contrast(1.2) saturate(0.8);
+
+    .btn-primary {
+      opacity: 0.8;
+    }
+
+    .particles-container {
+      opacity: 0.05;
+    }
+  }
+
+  &[data-photophobia-intensity="3"] {
+    filter: brightness(0.7) contrast(1.3) saturate(0.7);
+
+    .btn-primary {
+      opacity: 0.7;
+    }
+
+    .skill-card {
+      box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  &[data-photophobia-intensity="4"] {
+    filter: brightness(0.6) contrast(1.4) saturate(0.6);
+
+    .btn-primary {
+      opacity: 0.6;
+    }
+
+    .skill-card {
+      box-shadow: none;
+      border: 1px solid var(--photophobia-border, #333);
+    }
+
+    .particles-container {
+      display: none;
+    }
+  }
+
+  &[data-photophobia-intensity="5"] {
+    filter: brightness(0.5) contrast(1.5) saturate(0.5);
+
+    .btn-primary {
+      opacity: 0.5;
+    }
+
+    .skill-card {
+      background: var(--photophobia-card-dark, #111) !important;
+      border: 1px solid var(--photophobia-border-dark, #222);
+    }
+
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+// ===== TAMAÑO DE FUENTE =====
+
+[data-font-size="1"] {
+  font-size: v.$font-size-sm;
+
+  h1 { font-size: v.$font-size-2xl; }
+  h2 { font-size: v.$font-size-xl; }
+  h3 { font-size: v.$font-size-lg; }
+}
+
+[data-font-size="2"] {
+  font-size: v.$font-size-base;
+
+  h1 { font-size: v.$font-size-3xl; }
+  h2 { font-size: v.$font-size-2xl; }
+  h3 { font-size: v.$font-size-xl; }
+}
+
+[data-font-size="3"] {
+  font-size: v.$font-size-lg;
+
+  h1 { font-size: v.$font-size-4xl; }
+  h2 { font-size: v.$font-size-3xl; }
+  h3 { font-size: v.$font-size-2xl; }
+}
+
+[data-font-size="4"] {
+  font-size: calc(v.$font-size-lg * 1.1);
+
+  h1 { font-size: calc(v.$font-size-4xl * 1.1); }
+  h2 { font-size: calc(v.$font-size-3xl * 1.1); }
+  h3 { font-size: calc(v.$font-size-2xl * 1.1); }
+}
+
+[data-font-size="5"] {
+  font-size: v.$font-size-xl;
+
+  h1 { font-size: calc(v.$font-size-4xl * 1.2); }
+  h2 { font-size: calc(v.$font-size-3xl * 1.2); }
+  h3 { font-size: calc(v.$font-size-2xl * 1.2); }
+}
+
+// Ajustes de layout para tamaños de fuente grandes
+[data-font-size="4"],
+[data-font-size="5"] {
+  .container {
+    max-width: 90%;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: v.$spacing-5;
+  }
+
+  .skill-card {
+    padding: v.$spacing-5;
+  }
+}
+
+// ===== COMPATIBILIDAD CON TEMA HIGH-CONTRAST =====
+
+// Cuando high-contrast está activo con modos de accesibilidad
+[data-theme="high-contrast"] {
+  &[data-dyslexia-mode="true"] {
+    // En high-contrast, mantener los colores pero aplicar la fuente dislexia
+    font-family: v.$font-family-dyslexia !important;
+
+    // Asegurar buen contraste incluso con la fuente dislexia
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--text-primary, #ffffff) !important;
+    }
+
+    a {
+      color: var(--accent-primary, #ffff00) !important;
+    }
+  }
+
+  &[data-reading-mode="true"] {
+    // En high-contrast, el modo lectura usa los colores de alto contraste
+    background: var(--bg-primary, #000000) !important;
+    color: var(--text-primary, #ffffff) !important;
+
+    .container {
+      max-width: 65ch;
+      margin: 0 auto;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--text-primary, #ffffff) !important;
+    }
+
+    a {
+      color: var(--accent-primary, #ffff00) !important;
+      border-bottom-color: var(--accent-primary, #ffff00);
+    }
+
+    .skill-card {
+      background: var(--card-bg, #000000) !important;
+      border-color: var(--border-color, #ffffff) !important;
+    }
+  }
+
+  &[data-photophobia-mode="true"] {
+    // High-contrast ya es oscuro, fotofobia puede ajustar filtros
+    filter: brightness(0.8) contrast(1.3);
+
+    .particles-container {
+      display: none; // High-contrast ya desactiva partículas
+    }
+  }
+
+  &[data-font-size="4"],
+  &[data-font-size="5"] {
+    // En high-contrast, los tamaños grandes de fuente mantienen el contraste
+    .container {
+      max-width: 95%;
+    }
+
+    .skill-card {
+      background: var(--card-bg, #000000) !important;
+      border: 2px solid var(--border-color, #ffffff) !important;
+    }
+  }
+}
+
+// ===== COMPATIBILIDAD ENTRE MODOS DE ACCESIBILIDAD =====
+
+// Cuando múltiples modos de accesibilidad están activos
+[data-reading-mode="true"][data-dyslexia-mode="true"] {
+  .container {
+    max-width: 55ch;
+  }
+
+  p, li {
+    line-height: calc(var(--current-line-height, 1.6) * 1.1);
+  }
+}
+
+[data-photophobia-mode="true"] {
+  &[data-font-size="4"],
+  &[data-font-size="5"] {
+    .container {
+      max-width: 95%;
+    }
+
+    .skill-card {
+      background: var(--photophobia-card-large, #0a0a0a) !important;
+    }
+  }
+}
+
+// ===== RESPONSIVE ADJUSTMENTS =====
+
+@media (max-width: 768px) {
+  [data-reading-mode="true"] {
+    .container {
+      max-width: 95% !important;
+      padding: 0 v.$spacing-4;
+    }
+
+    font-size: v.$font-size-base;
+
+    h1 {
+      font-size: calc(v.$font-size-2xl * 0.9);
+      margin-top: v.$spacing-8;
+    }
+
+    h2 {
+      font-size: calc(v.$font-size-xl * 0.9);
+    }
+  }
+
+  [data-font-size="4"],
+  [data-font-size="5"] {
+    .container {
+      max-width: 95% !important;
+    }
+
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+// src/scss/layout/_grid.scss
+@use '../abstracts/variables' as v;
+
+// ===== LAYOUT =====
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 v.$spacing-4;
+}

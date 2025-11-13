@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Salud Integral - Germán Rojas Varela</title>
+    <meta name="description" content="Ponte en contacto con Germán Rojas Varela para consultas, terapias y orientación personalizada. Un espacio para sanar cuerpo, mente y alma.">
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <!-- Calendly link widget -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</head>
+<body>
+
+<!-- Skip Link -->
+<a href="#main-content" class="skip-link">
+    <span class="skip-icon">🌿</span>
+    <span class="skip-text">Saltar al contenido</span>
+</a>
+
+<!-- Navegación -->
+<nav class="navbar" aria-label="Navegación principal">
+    <div class="nav-container">
+
+        <div class="nav-brand">
+            <a href="../../index.html" class="brand-link">
+                <h1>Salud Integral</h1>
+            </a>
+        </div>
+
+        <ul class="nav-menu">
+            <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="sobre-mi.html">Sobre mí</a></li>
+            <li><a href="terapias.html">Terapias</a></li>
+            <li><a href="enfermedades.html">Enfermedades</a></li>
+            <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+        </ul>
+
+        <!-- Controles de tema y accesibilidad -->
+        <div class="nav-controls">
+            <div class="dropdown theme-dropdown">
+                <button class="nav-button dropdown-toggle"
+                        id="theme-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-label="Cambiar tema">
+                    <span class="button-text">Tema</span>
+                </button>
+                <ul class="dropdown-menu theme-menu" aria-labelledby="theme-toggle">
+                    <li><button class="dropdown-item theme-option" data-theme="light">🌞 Claro</button></li>
+                    <li><button class="dropdown-item theme-option" data-theme="dark">🌙 Oscuro</button></li>
+                    <li><button class="dropdown-item theme-option" data-theme="sepia">📜 Sepia</button></li>
+                </ul>
+            </div>
+
+            <button class="nav-button menu-toggle"
+                    id="menu-toggle"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu">
+                <span class="hamburger-icon"></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Menú móvil -->
+<div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-header">
+        <button class="close-button" id="close-menu-toggle" aria-label="Cerrar menú">
+            <span class="close-icon">×</span>
+        </button>
+    </div>
+    <ul class="mobile-nav">
+        <li><a href="../../index.html">Inicio</a></li>
+        <li><a href="sobre-mi.html">Sobre mí</a></li>
+        <li><a href="terapias.html">Terapias</a></li>
+        <li><a href="enfermedades.html">Enfermedades</a></li>
+        <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+    </ul>
+</div>
+
+<div id="menu-overlay" class="menu-overlay" aria-hidden="true"></div>
+
+<!-- Contenido principal -->
+<main id="main-content">
+
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-title">
+        <div class="container">
+            <h1 id="hero-title" class="hero-title">Contacto y Consultas</h1>
+            <p class="hero-subtitle">Cada proceso de sanación comienza con una conversación sincera.</p>
+        </div>
+    </section>
+
+    <section class="contacto" aria-labelledby="contacto-title">
+        <div class="container">
+            <h2 id="contacto-title" class="section-title">Envíame un mensaje</h2>
+
+            <!-- Formulario integrado con Formspree -->
+            <form class="contact-form" action="https://formspree.io/f/xyzlzngj" method="POST" aria-label="Formulario de contacto">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Mensaje o consulta</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+            </form>
+
+            <div class="contact-options">
+                <h3>Otras formas de contacto</h3>
+                <div class="options-grid">
+                    <div class="contact-option">
+                        <h4>Agenda una cita</h4>
+                        <p>Reserva una sesión en línea o presencial directamente en mi calendario</p>
+                        <button class="btn btn-secondary" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/granterapeuta'}); return false;">
+                            Reservar Cita
+                        </button>
+                    </div>
+                    <div class="contact-option">
+                        <h4>Contacto directo</h4>
+                        <p>Comunícate conmigo directamente a través de:</p>
+                        <div class="contact-buttons">
+                            <button class="btn btn-whatsapp" id="whatsapp-btn">
+                                <span class="btn-icon">💬</span> WhatsApp
+                            </button>
+                            <button class="btn btn-phone" id="phone-btn">
+                                <span class="btn-icon">📞</span> Llamar
+                            </button>
+                            <button class="btn btn-email" id="email-btn">
+                                <span class="btn-icon">✉️</span> Email
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        <p>&copy; <span id="current-year">2025</span> Salud Integral - Germán Rojas Varela. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="#" id="footer-email" class="footer-link">Email</a>
+            <a href="#" id="footer-whatsapp" class="footer-link">WhatsApp</a>
+            <a href="#" id="footer-facebook" class="footer-link">Facebook</a>
+        </div>
+    </div>
+</footer>
+
+<div class="particles-container" aria-hidden="true">
+    <canvas id="particles-canvas"></canvas>
+</div>
+
+<script type="module" src="../../assets/js/main.js"></script>
+</body>
+</html>

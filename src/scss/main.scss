@@ -1,0 +1,41 @@
+// src/scss/main.scss
+// ============================
+// 🎯 ARCHIVO PRINCIPAL SCSS
+// ============================
+
+// 1. ABSTRACTOS
+@use 'abstracts/variables';
+
+// 2.1  Temas de Accesibilidad
+@use 'themes/accessibility/themes-index' as accessibility-themes;
+
+// 2.2 Partículas
+@use 'themes/particles/base-particles';
+@use 'themes/particles/light-particles';
+@use 'themes/particles/dark-particles';
+@use 'themes/particles/sepia-particles';
+@use 'themes/particles/high-contrast-particles';
+
+// 3. BASE
+@use 'base/reset';
+
+// 4. LAYOUT
+@use 'layout/grid';
+
+// 5. COMPONENTES (usan variables CSS de los temas)
+@use 'components/navbar';
+@use 'components/buttons';
+@use 'components/particles';
+@use 'components/footer';
+@use 'components/hero';
+@use 'components/intro';
+@use 'components/dropdowns';
+@use 'components/profile';
+@use 'components/contact-manager';
+
+// 6. PÁGINAS
+@use 'pages/home';
+@use 'pages/blog';
+
+// 7. UTILITIES
+@use 'layout/responsive';

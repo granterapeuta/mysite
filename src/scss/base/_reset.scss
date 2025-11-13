@@ -1,0 +1,48 @@
+// src/scss/base/_reset.scss
+@use '../abstracts/variables' as v;
+
+// ===== ESTILOS BASE =====
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: v.$font-family-base;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  position: relative;
+}
+
+// ===== ACCESIBILIDAD =====
+.skip-link {
+  position: fixed;
+  top: v.$spacing-3;
+  left: v.$spacing-3;
+  background: v.$color-primary;
+  color: v.$text-on-accent;
+  padding: v.$spacing-2 v.$spacing-3;
+  border-radius: v.$border-radius;
+  text-decoration: none;
+  font-weight: v.$font-weight-medium;
+  z-index: v.$z-index-modal;
+  transform: translateX(-100%);
+  transition: transform v.$transition-normal;
+  display: flex;
+  align-items: center;
+  gap: v.$spacing-2;
+
+  &:focus {
+    transform: translateX(0);
+  }
+
+  .skip-icon {
+    font-size: 1.2em;
+  }
+}

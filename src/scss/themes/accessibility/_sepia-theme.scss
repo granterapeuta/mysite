@@ -1,0 +1,46 @@
+// src/scss/themes/accessibility/_sepia-theme.scss
+[data-theme="sepia"] {
+  // Colores sepia para lectura
+  --bg-primary: #f8f0e0;
+  --bg-secondary: #f0e6d2;
+  --bg-tertiary: #e8dcc6;
+  --bg-inverse: #5d4037;
+  
+  --text-primary: #5d4037;
+  --text-secondary: #8d6e63;
+  --text-muted: #a1887f;
+  --text-inverse: #f8f0e0;
+  --text-on-accent: #ffffff;
+
+  --accent-primary: #a1887f;
+  --accent-secondary: #8d6e63;
+  --accent-success: #789d6e;
+  --accent-danger: #c86b6b;
+  --accent-warning: #d4b16a;
+  --accent-info: #6ba5c8;
+
+  --border-color: #d7ccc8;
+  --border-light: #e8dcc6;
+  --border-dark: #bcaaa4;
+
+  --focus-ring: 0 0 0 3px rgba(161, 136, 127, 0.3);
+  --shadow-sm: 0 1px 2px 0 rgba(139, 109, 66, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(139, 109, 66, 0.15), 0 2px 4px -1px rgba(139, 109, 66, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(139, 109, 66, 0.2), 0 4px 6px -2px rgba(139, 109, 66, 0.15);
+  
+  --card-bg: #f0e6d2;
+  --button-bg: #a1887f;
+  --button-text: #ffffff;
+  --button-hover-bg: #8d6e63;
+  --input-bg: #f0e6d2;
+  --input-border: #d7ccc8;
+  
+  // Optimizaciones para lectura
+  --font-family-base: 'Merriweather', 'Georgia', serif;
+  --line-height-base: 1.8;
+  --max-content-width: 65ch;
+
+  // Reducir brillo
+  --image-opacity: 0.8;
+  --particles-opacity: 0.3;
+}

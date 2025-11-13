@@ -1,0 +1,45 @@
+[data-theme="dark"] {
+  // Colores de fondo
+  --bg-primary: #101f1c;     // Verde profundo
+  --bg-secondary: #1b2f2b;   // Verde azulado
+  --bg-tertiary: #233d38;
+  --bg-inverse: #f9fcfb;
+
+  // Texto
+  --text-primary: #eaf7f4;
+  --text-secondary: #a7ccc3;
+  --text-muted: #7da39a;
+  --text-inverse: #101f1c;
+  --text-on-accent: #ffffff;
+
+  // Acentos
+  --accent-primary: #57bfa0;  // Verde menta
+  --accent-secondary: #7fb3d5; // Azul suave
+  --accent-success: #45a588;
+  --accent-danger: #e07a7a;
+  --accent-warning: #e6c065;
+  --accent-info: #90c9d5;
+
+  // Bordes y sombras
+  --border-color: #2e4a45;
+  --border-light: #385b55;
+  --border-dark: #1b2f2b;
+
+  --focus-ring: 0 0 0 3px rgba(87, 191, 160, 0.45);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+
+  // Componentes
+  --navbar-bg: #101f1c;
+  --card-bg: #1b2f2b;
+  --button-bg: var(--accent-primary);
+  --button-hover-bg: #4aa88d;
+  --input-bg: #233d38;
+  --input-border: #2e4a45;
+
+  // Estados / efectos
+  --particles-opacity: 0.4;
+  --particles-count: 50;
+  --image-opacity: 0.9;
+}

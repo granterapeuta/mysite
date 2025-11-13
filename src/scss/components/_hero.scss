@@ -1,0 +1,36 @@
+// src/scss/components/_hero.scss
+@use '../abstracts/variables' as v;
+
+.hero {
+  background: linear-gradient(135deg, var(--accent-secondary, v.$color-secondary) 0%, var(--accent-primary, v.$color-primary) 100%);
+  color: var(--text-inverse, v.$white);
+  padding: 120px 0 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: var(--font-weight-bold, v.$font-weight-bold);
+    margin-bottom: var(--spacing-5, v.$spacing-5);
+    color: var(--text-inverse, v.$white);
+
+    .title-line {
+      display: block;
+    }
+  }
+
+  &-subtitle {
+    font-size: var(--font-size-xl, v.$font-size-xl);
+    margin-bottom: var(--spacing-8, v.$spacing-8);
+    opacity: 0.9;
+    color: var(--text-inverse, v.$white);
+  }
+
+  &-actions {
+    display: flex;
+    gap: var(--spacing-4, v.$spacing-4);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

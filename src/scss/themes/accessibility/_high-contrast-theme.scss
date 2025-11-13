@@ -1,0 +1,48 @@
+// src/scss/themes/accessibility/_high-contrast-theme.scss
+[data-theme="high-contrast"] {
+  // Colores de alto contraste
+  --bg-primary: #000000;
+  --bg-secondary: #000000;
+  --bg-tertiary: #333333;
+  --bg-inverse: #ffffff;
+
+  --text-primary: #ffffff;
+  --text-secondary: #ffffff;
+  --text-muted: #cccccc;
+  --text-inverse: #000000;
+  --text-on-accent: #000000;
+
+  --accent-primary: #ffff00;
+  --accent-secondary: #00ffff;
+  --accent-success: #00ff00;
+  --accent-danger: #ff0000;
+  --accent-warning: #ffff00;
+  --accent-info: #00ffff;
+
+  --card-bg: #000000;
+  --button-bg: #ffff00;
+  --button-text: #000000;
+  --button-hover-bg: #ffff00;
+  --input-bg: #000000;
+  --input-border: #ffffff;
+
+  // Tipografía mejorada
+  --font-weight-normal: 600;
+  --font-weight-medium: 700;
+  --font-weight-bold: 800;
+
+  // Estados muy visibles
+  --border-color: #ffffff;
+  --border-light: #ffffff;
+  --border-dark: #ffffff;
+  
+  --focus-ring: 0 0 0 4px #ffff00;
+  --shadow-sm: 0 0 0 1px #ffffff;
+  --shadow-md: 0 0 0 2px #ffffff;
+  --shadow-lg: 0 0 0 3px #ffffff;
+  --link-underline: underline;
+
+  // Desactivar efectos que distraen
+  --particles-opacity: 0;
+  --shadow-intensity: 0;
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprender las Enfermedades | Salud Integral - Germán Rojas Varela</title>
+    <meta name="description" content="Comprende las causas físicas, emocionales y energéticas que originan las enfermedades. Un enfoque integral hacia la salud y el equilibrio.">
+    <link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body>
+
+<!-- Skip Link -->
+<a href="#main-content" class="skip-link">
+    <span class="skip-icon">🌿</span>
+    <span class="skip-text">Saltar al contenido</span>
+</a>
+
+<!-- Navegación -->
+<nav class="navbar" aria-label="Navegación principal">
+    <div class="nav-container">
+
+        <div class="nav-brand">
+            <a href="../../index.html" class="brand-link">
+                <h1>Salud Integral</h1>
+            </a>
+        </div>
+
+        <ul class="nav-menu">
+            <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="sobre-mi.html">Sobre mí</a></li>
+            <li><a href="terapias.html">Terapias</a></li>
+            <li><a href="enfermedades.html" aria-current="page">Enfermedades</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+
+        <!-- Controles de tema y accesibilidad -->
+        <div class="nav-controls">
+            <div class="dropdown theme-dropdown">
+                <button class="nav-button dropdown-toggle"
+                        id="theme-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-label="Cambiar tema">
+                    <span class="button-text">Tema</span>
+                </button>
+                <ul class="dropdown-menu theme-menu" aria-labelledby="theme-toggle">
+                    <li><button class="dropdown-item theme-option" data-theme="light">🌞 Claro</button></li>
+                    <li><button class="dropdown-item theme-option" data-theme="dark">🌙 Oscuro</button></li>
+                    <li><button class="dropdown-item theme-option" data-theme="sepia">📜 Sepia</button></li>
+                </ul>
+            </div>
+
+            <button class="nav-button menu-toggle"
+                    id="menu-toggle"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu">
+                <span class="hamburger-icon"></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Menú móvil -->
+<div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-header">
+        <button class="close-button" id="close-menu-toggle" aria-label="Cerrar menú">
+            <span class="close-icon">×</span>
+        </button>
+    </div>
+    <ul class="mobile-nav">
+        <li><a href="../../index.html">Inicio</a></li>
+        <li><a href="sobre-mi.html">Sobre mí</a></li>
+        <li><a href="terapias.html">Terapias</a></li>
+        <li><a href="enfermedades.html" aria-current="page">Enfermedades</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+</div>
+
+<div id="menu-overlay" class="menu-overlay" aria-hidden="true"></div>
+
+<!-- Contenido principal -->
+<main id="main-content">
+
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-title">
+        <div class="container">
+            <h1 id="hero-title" class="hero-title">Comprender las Causas de la Enfermedad</h1>
+            <p class="hero-subtitle">La enfermedad no es un castigo, sino un mensaje del cuerpo que nos invita a volver al equilibrio.</p>
+        </div>
+    </section>
+
+    <section class="causas" aria-labelledby="causas-title">
+        <div class="container">
+            <h2 id="causas-title" class="section-title">Tres Niveles de Causa</h2>
+
+            <div class="causas-grid">
+                <article class="causa-card">
+                    <div class="causa-icon">🌱</div>
+                    <h3>Causa Física</h3>
+                    <p>El cuerpo reacciona al entorno: contaminación, alimentación, radiaciones, falta de descanso o actividad. Atender lo físico es cuidar el templo que habitamos.</p>
+                </article>
+
+                <article class="causa-card">
+                    <div class="causa-icon">💖</div>
+                    <h3>Causa Emocional</h3>
+                    <p>Las emociones reprimidas crean bloqueos energéticos que con el tiempo se manifiestan en el cuerpo. La tristeza, la ira o el miedo sostenido alteran la armonía interior.</p>
+                </article>
+
+                <article class="causa-card">
+                    <div class="causa-icon">✨</div>
+                    <h3>Causa Energética</h3>
+                    <p>La energía vital fluye por nuestro cuerpo. Cuando este flujo se interrumpe —por pensamientos, ambientes o experiencias— aparece el desequilibrio. Sanar es restablecer la circulación de esa energía.</p>
+                </article>
+            </div>
+
+            <div class="reflection">
+                <blockquote>
+                    <p>"La verdadera sanación ocurre cuando comprendemos el mensaje del síntoma y elegimos transformar la emoción que lo originó."</p>
+                    <cite>— Germán Rojas Varela</cite>
+                </blockquote>
+            </div>
+
+            <div class="cta-section">
+                <h3>¿Listo para comenzar tu proceso de sanación?</h3>
+                <p>Agenda una consulta y descubramos juntos el origen de tus síntomas.</p>
+                <a href="contacto.html" class="btn btn-primary">Agendar Consulta</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        <p>&copy; <span id="current-year">2025</span> Salud Integral - Germán Rojas Varela. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="#" id="footer-email" class="footer-link">Email</a>
+            <a href="#" id="footer-whatsapp" class="footer-link">WhatsApp</a>
+            <a href="#" id="footer-facebook" class="footer-link">Facebook</a>
+        </div>
+    </div>
+</footer>
+
+<div class="particles-container" aria-hidden="true">
+    <canvas id="particles-canvas"></canvas>
+</div>
+
+<script type="module" src="../../assets/js/main.js"></script>
+</body>
+</html>

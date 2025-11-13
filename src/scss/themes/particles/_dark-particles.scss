@@ -1,0 +1,23 @@
+// src/scss/themes/particles/_dark-particles.scss
+[data-theme="dark"],
+.theme-dark {
+  --particles-opacity: 0.7;
+  --particles-size-min: 1;
+  --particles-size-max: 3;
+  --particles-speed: 0.7;
+  --particles-count: 100;
+  --particles-line-linked: true;
+  --particles-blur: 1;
+
+  --particles-color-1: rgba(60, 200, 143, 0.2);
+  --particles-color-2: rgba(51, 91, 154, 0.18);
+  --particles-color-3: rgba(87, 196, 220, 0.15);
+  --particles-color-4: rgba(40, 169, 123, 0.18);
+  --particles-color-5: rgba(255, 255, 255, 0.12);
+  --particles-color-6: rgba(200, 220, 255, 0.15);
+
+  --particles-colors-array: "[rgba(60, 200, 143, 0.2), rgba(51, 91, 154, 0.18), rgba(87, 196, 220, 0.15), rgba(40, 169, 123, 0.18), rgba(255, 255, 255, 0.12), rgba(200, 220, 255, 0.15)]";
+
+  --particles-interaction-opacity: 0.3;
+  --particles-mobile-opacity: 0.6;
+}
